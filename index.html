@@ -83,7 +83,7 @@
               <br>
               <strong>Arpandeep Khatua</strong>,
               <a href="https://bartwronski.com/">Vikram Sharma</a>, 
-							<a href="https://bmild.github.io/">Wen-Mei Hwu</a>. <br>
+							<a href="https://en.wikipedia.org/wiki/Wen-mei_Hwu"> Wen-Mei Hwu</a>. <br>
               <a href="https://github.com/IllinoisGraphBenchmark">[code]</a>
               <a href="data/GNN_poster.pdf">[poster]</a>
               <a href="">[unpublished]</a> 
@@ -129,7 +129,7 @@
               <a href="https://github.com/akhatua2/pi_cf_digits_statistics">[code]</a>
               <a href="data/IGL_Randomness_in_Number_Theory_Spring_2022.pdf">[poster]</a> 
               <a href="https://www.maa.org/sites/default/files/pdf/mathfest/2022/StudentPosterAbstracts.pdf">[abstract]</a> <i><strong>MAA MathFest</strong> 2022 (pg.20) </i> 
-                We ran statistical analysis on 30 billions digits of the continued fraction digits of &pi; to prove that it is random.
+                We ran statistical analysis on 30 billions digits of the continued fraction digits of &pi; to provide evidence that it is random.
               </p>
             </td>
           </tr>
@@ -179,8 +179,7 @@
             <br>
               Undergraduate Researcher | August 2021 - Present
             <br>
-            <a href="https://github.com/NextGenSearchEngine"> 
-            Next Gen Search Engine</a> [NLP] - <a href="https://cs.illinois.edu/about/people/department-faculty/kcchang">Prof. Kevin Chen-Chuan Chang</a>
+            <a href="https://en.wikipedia.org/wiki/Wen-mei_Hwu"> Wen-Mei Hwu</a>
             <p>
               <ul>
                 <li>Designed a pipeline to generate structure-aware articles given a topic using information retrieval, ranking, text
@@ -190,6 +189,29 @@
                   for structured text generation.</li>
                 <li>Filtered out noisy web retrieved data using text-rank and trained a few-shot classifier model to classify them
                   into the dynamically generated sub-topics.</li>
+              </ul>
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding-left:35px;width:100%;vertical-align:middle">
+            <a href="http://impact.crhc.illinois.edu/">
+              <papertitle> IMPACT Lab </papertitle> 
+            </a>
+            <br>
+              Undergraduate Researcher | August 2021 - Present
+            <br>
+            <a href="https://github.com/NextGenSearchEngine"> 
+            Next Gen Search Engine</a> [NLP] - <a href="https://cs.illinois.edu/about/people/department-faculty/kcchang">Prof. Kevin Chen-Chuan Chang</a>
+            <p>
+              <ul>
+                <li>Created a methodology and generated the largest publicly available homogeneous graph dataset - Illinois Graph Benchmark (IGB) with
+                  260M nodes and 3.9B edges collaborating with researchers from Amazon AWS, Deep Graph Library (DGL),
+                  NVIDIA and IBM for multi-class node classification and efficient system designing.</li>
+                <li>Combined Microsoft Academic Graph (MAG) and Semantic Scholar databases to annotate 162x more data for
+                  supervised learning tasks to test emerging Graph Neural Network (GNN) models at scale.</li>
+                <li>Extended methodology to create a 600M nodes, 6B edges heterogeneous graph (largest public dataset).</li>
               </ul>
             </p>
           </td>
@@ -230,7 +252,12 @@
             [Computer Vision] - Prof. J. Stephen Downie, Dr. Cameron Worthy, Dr. Boris Capitanu</a>
             <p>
               <ul>
-                <li>Worked on classifying non textual data on Hathi-Trust Digital Library records.</li>
+                <li>Applied transfer learning on a Mask-RCNN based model detectron2 using the Pubmed dataset to detect 5
+                  non-text classes in documents. Coupled with a large image classification model to detect and classify over 1000
+                  classes of non-text objects and images on scanned documents with over 97% accuracy.</li>
+                <li>Implemented Optical character Regonition (OCR) into the pipeline for better text extract system.</li>
+                <li>Used openCV for preprocessing pipeline to process over 16M volumes (5B pages) in the HathiTrust Digital
+                  Library to improve run-time by 3x on a V 100 GPU.</li>
               </ul>
             </p>
           </td>
@@ -247,8 +274,11 @@
             Black-Box Reinforecement Learning Optimization  [Computer Vision] - Prof. Sanmi Koyejo</a>
             <p>
               <ul>
-                <li>Implementing Reinforcement learning (RL) methods for black-box optimization in a combinatorial search problem 
-                  to estimate phenotype combinations that maximize heritability.</li>
+                <li>Worked on a cross-department project to predict phenotype combinations in maize/sorghum crop genes to
+                  maximize heritability using reinforcement learning (RL). Wrote classic local and global search algorithms like
+                  Particle Swarm Optimization (PSO) and Simulated Annealing (SA) to set baselines.</li>
+                <li>Developed a Multi-Layer Perceptron (MLP) to serve as a mapping function between wavelength and experimental
+                  ground-truth data which improved the RL search over multi-dimensional wavelength space.</li>
               </ul>
             </p>
           </td>
@@ -260,7 +290,7 @@
               <papertitle>Health Care Engineering Systems Center</papertitle> 
             </a>
             <br>
-              Jump ARCHES Software Engineering Intern | June 2021 - May 2022
+              Jump ARCHES Software Engineering Intern | June 2020 - May 2021
             <br>
               Improving Pectus Excavatum Nuss Procedure using Virtual Reality [VR] - Dr. Inki Kim</a>
             <p>
@@ -268,11 +298,49 @@
                 <li>Developed a novel operation training procedure in virtual reality using Unity with anatomically accurate physics
                   scripts, by conducting literature reviews, capable of real-time rendering, optimized to run without a GPU.</li>
                 <li>Implementing a Reinforcement Learning model to automate operation procedure and create a predictive model
-                  to assign probability of operation success by optimizing a 6-dimensional c-space search algorithm.</li>
+                  to assign probability of success using 6-dimensional c-space A*, RRT, and RRT* search algorithms.</li>
               </ul>
             </p>
           </td>
         </tr>
+
+        <tr>
+          <td style="padding-left:35px;width:100%;vertical-align:middle">
+              <papertitle>Caesar Lab</papertitle> 
+            </a>
+            <br>
+              Undergraduate Researcher | June 2020 - May 2021
+            <br>
+              Prof. Matthew Caesar</a>
+            <p>
+              <ul>
+                <li>Experimenting combinations of different neural net architectures for object detection (ResNets, MobileNets) and
+                  object tracking using deepSORT with an SSD trained on NCSA's HAL cluster.</li>
+                <li>Implemented the Hungarian Algorithm and Kalman Filter to track and predict object position during large
+                  periods of obstruction.</li>
+              </ul>
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding-left:35px;width:100%;vertical-align:middle">
+              <papertitle>EarthSense (FRESH Labs)</papertitle> 
+            </a>
+            <br>
+              Undergraduate Researcher | June 2020 - May 2021
+            <br>
+              Prof. Matthew Caesar</a>
+            <p>
+              <ul>
+                <li>Soldered and worked on the power source and circuit design for cameras and sensors of an agricultural bot.</li>
+                <li>Wrote Python scripts for autonomous path planning using OpenCV. Labeled over 5000 pictures and helped
+                  train a Mask R-CNN to detect the path and its surrounding with less than 5% error.</li>
+              </ul>
+            </p>
+          </td>
+        </tr>
+
       </tbody></table>
 
 
