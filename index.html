@@ -153,7 +153,7 @@
         <tr>
           <td style="padding-left:35px;width:100%;vertical-align:middle">
             <a href="https://math.illinois.edu/research/igl">
-              <papertitle>Illinois Geometry Laboratory (IGL)</papertitle> 
+              <papertitle>Social Computing Lab</papertitle> 
             </a>
             <br>
               IGL Fellow Fall 2022 | August 2022 - Present
@@ -162,8 +162,9 @@
               of displacement and needs related to the Russia-Ukraine conflict</a> [NLP] - <a href="https://jdiesnerlab.ischool.illinois.edu">Prof Jana Diesner</a>
             <p>
               <ul>
-                <li>Using the Twitter API to extract data about how supplies needs, financial needs, weapon needs, and supply chain needs were addressed 
-                  by large NGOs during the Russia and Ukraine.</li>
+                <li>Using Twitter API to collect 10M tweets for detecting and prioritizing needs during crisis events (like the
+                  Russia-Ukraine conflict) in order to (1) extract a list of needed resources, (2) how they are fulfilled and (3)
+                  detect who-needs-what phrases.</li>
               </ul>
             </p>
           </td>
@@ -182,9 +183,13 @@
             Next Gen Search Engine</a> [NLP] - <a href="https://cs.illinois.edu/about/people/department-faculty/kcchang">Prof. Kevin Chen-Chuan Chang</a>
             <p>
               <ul>
-                <li>Normalizing Wikipedia article structures based on related categories and sub-topic.</li>
-                <li>Created a data-driven search engine with ranking and retrieval models to scrape the web and create dynamic
-                  subtopic-based summarized search results with 97% classification accuracy.</li>
+                <li>Designed a pipeline to generate structure-aware articles given a topic using information retrieval, ranking, text
+                  generation, and summarization for creating Wikipedia-like articles and richer search results.</li>
+                <li>Created a 2-stage attention-based seq2seq model to generate subtopics for a given title. Given a topic and intro,
+                  stage one generates a list of categories for the topic and stage two creates a list of subtopics, which is then used
+                  for structured text generation.</li>
+                <li>Filtered out noisy web retrieved data using text-rank and trained a few-shot classifier model to classify them
+                  into the dynamically generated sub-topics.</li>
               </ul>
             </p>
           </td>
@@ -202,8 +207,11 @@
             [Statistics] - <a href="https://jdiesnerlab.ischool.illinois.edu">Prof. A J Hildebrand</a>
             <p>
               <ul>
-                <li>Ran large scale statistical study of p-test, z-scores, random walks and sites visited to prove the randomness of the continued 
-                  fraction digits of &pi;</li>
+                <li>Performed large-scale statistical analysis of the first 30 billion continued fraction (CF) digits of π using chi-square
+                  tests, p-tests, and Kolmogorov-Smirnov tests to provide compelling evidence that these digits behave like those
+                  of a random real number.</li>
+                <li>Implemented massive multi-dimensional space walks to compare random and π CF digits and used extreme-digit,
+                  single-digit, and z-scores for further evidence.</li>
               </ul>
             </p>
           </td>
