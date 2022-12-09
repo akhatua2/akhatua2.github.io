@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <script>
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
 
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more";
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less";
+    moreText.style.display = "inline";
+  }
+}
+</script> -->
 <head>
 
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
@@ -73,10 +89,9 @@
 
   <header class="bg-primary bg-gradient text-white">
     <div class="container text-left">
-      <h1><img src="resources/me.png" alt="Arpan's picture" style="float:right;width:250px;height:250px"></br>Hi! &#128075; I'm
+      <h1><img src="resources/profile.jpg" alt="Arpan's picture" style="border-radius:2%;float:right;width:395px;height:255px;"></br>Hi! &#128075; I'm
         Arpan.</h1>
-      <p class="lead"><strong>Undergraduate Researcher in NLP and GNNs</strong></br>
-
+      <p class="lead"><h3><strong>Undergraduate Researcher in NLP and GNNs</strong></h3></br>
         <strong>Senior in Computer Engineering (Minor in Mathematics)</strong></br>
         <strong>University of Illinois Urbana-Champaign (UIUC)</strong></br>
       </p>
@@ -135,10 +150,11 @@
           <h2>Publications, Preprints and Posters</h2>
           <ul>
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/igb.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/igb.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -158,7 +174,7 @@
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/baselinecomp.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/baselinecomp.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -177,7 +193,7 @@
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/igl_sp.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/igl_sp.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -196,7 +212,7 @@
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/igl_fa.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/igl_fa.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -214,7 +230,7 @@
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/maa_poster.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/maa_poster.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -233,7 +249,7 @@
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/igb_poster.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/igb_poster.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -254,7 +270,7 @@
               <tr>
                 <td style="padding:2px;width:25%;vertical-align:middle">
                   <div class="one">
-                    <img src='resources/ncsa_poster.png' width="250">
+                    <img style="border-radius: 2%;" src='resources/ncsa_poster.png' width="250">
                   </div>
                 </td>
                 <td style="padding-left:35px;width:75%;vertical-align:middle">
@@ -417,9 +433,6 @@
                 </ul>
               </td>
             </tr>
-
-
-
 
             <tr>
               <td style="padding-bottom:20px;padding-top:20px;width:25%;vertical-align:top">
@@ -629,103 +642,121 @@
   <section id="awardshonors" class="bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-lg-32 mx-auto">
+        <div class="col-lg-32 mx-auto" style="width:100%;">
           <h2>Awards & Honors &#127942;</h2>
-          <ul>
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://www.c3sr.com"
-                  target="_blank">IBM-ILLINOIS C3SR Scholar</a> $1,000 research scholarship, 2021
-               <br>
-               The IBM-ILLINOIS Center for Cognitive Computing Systems Research (C3SR) is a multi-year joint venture 
-               between IBM Research and the University of Illinois at Urbana-Champaign to solve the most pressing issues 
-               facing the new computing era of artificial intelligence (AI). 
+
+          <details>
+            <summary class="lead">
+              <a href="https://www.c3sr.com" target="_blank">
+              IBM-ILLINOIS C3SR Scholar
+              </a> $1,000 research scholarship, 2021
+            </summary>
+              <p class="lead" align="justify">The IBM-ILLINOIS Center for Cognitive Computing Systems Research (C3SR) is a multi-year joint venture 
+              between IBM Research and the University of Illinois at Urbana-Champaign to solve the most pressing issues 
+              facing the new computing era of artificial intelligence (AI). </p>
+          </details>
+
+          <details>
+            <summary class="lead">
+              <a href="http://spin.ncsa.illinois.edu"
+              target="_blank">National Center for Supercomputing Applications Fellow</a> 
+              $6,000 research scholarship, 2021 
+            </summary>
+              <p class="lead" align="justify">The National Center for Supercomputing Applications (NCSA) needs talented, creative Illinois undergraduate students to 
+                participate in hands-on research and development projects in areas including supercomputing, data analytics, visualization,
+                 and more. Students Pushing Innovation (SPIN) fellows work on a research project for one academic year.</p>
+          </details>
+
+          <details>
+            <summary class="lead">
+              <a
+              href="https://ece.illinois.edu/academics/ugrad/scholarships-and-awards/scholarships/purl"
+              target="_blank">O. Thomas and Martha S. Purl Scholarship</a> $3,400 scholarship, 2022 
+            </summary>
+              <p class="lead" align="justify">
+                Awarded to 2 students out of 2000 to recognize outstanding students in Electrical and Computer Engineering at UIUC. These 
+                scholarships are given by O. Thomas Purl and his wife Martha to recognize outstanding students in 
+                Electrical and Computer Engineering. The recipient(s) are recognized at the annual spring ECE Awards and Recognition 
+                Banquet. All student recipients are featured on the second floor of the ECE Building's Student Honors Wall. 
               </p>
-            </li>
+          </details>
 
-            <li>
-              <p class="lead"  align="justify"><a
-                  href="http://spin.ncsa.illinois.edu"
-                  target="_blank">National Center for Supercomputing Applications Fellow</a> $6,000 research scholarship, 2021 <br>
-                  The National Center for Supercomputing Applications (NCSA) needs talented, creative Illinois undergraduate students to 
-                  participate in hands-on research and development projects in areas including supercomputing, data analytics, visualization,
-                   and more. Students Pushing Innovation (SPIN) fellows work on a research project for one academic year.
+          <details>
+            <summary class="lead">
+              <a href="https://www.admissions.illinois.edu/invest/scholarships-all"
+              target="_blank">Illinois Engineering Achievement Scholarship</a> $1,000 scholarship, 2022 
+            </summary>
+              <p class="lead" align="justify">
+                Merit-Based Scholarships.
               </p>
-            </li>
+          </details>
 
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://ece.illinois.edu/academics/ugrad/scholarships-and-awards/scholarships/purl"
-                  target="_blank">O. Thomas and Martha S. Purl Scholarship</a> $3,400 scholarship, 2022 <br>
-                  Awarded to 2 students out of 2000 to recognize outstanding students in Electrical and Computer Engineering at UIUC. These 
-                  scholarships are given by O. Thomas Purl and his wife Martha to recognize outstanding students in 
-                  Electrical and Computer Engineering. The recipient(s) are recognized at the annual spring ECE Awards and Recognition 
-                  Banquet. All student recipients are featured on the second floor of the ECE Building's Student Honors Wall. 
+          <details>
+            <summary class="lead">
+              <a
+              href="https://healtheng.illinois.edu/jumparches"
+              target="_blank">HCESC Jump ARCHES Scholar</a> $6,000 scholarship, 2020 
+            </summary>
+              <p class="lead" align="justify">
+                An OSF HealthCare, University of Illinois Urbana-Champaign, and University of Illinois College of Medicine Peoria 
+                Collaboration funding interdisciplinary research between engineers, clinicians, and social scientists to improve the 
+                future of health care for all. Scholars work on a research project for one academic year.              </p>
+          </details>         
+
+          <details>
+            <summary class="lead">
+              <a
+              href="https://grainger.illinois.edu/news/covid-19/covid19-wallofrecognition"
+              target="_blank">COVID-19 Wall of Recognition in Engineering</a> 2021 
+            </summary>
+              <p class="lead" align="justify">
+                In late 2020, The Grainger College of Engineering asked its faculty and staff to nominate people who had gone 
+                “above and beyond” in their response to the COVID-19 pandemic. Students who helped in new, unexpected ways.
+                The response to our request was massive—just like the hours, attention, and skill that our college offered 
+                the face of a global catastrophe. Hundreds of people’s names were submitted. A plaque recognizing all of 
+                them will be installed in Engineering Hall.            
               </p>
-            </li>
+          </details>  
 
-
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://www.admissions.illinois.edu/invest/scholarships-all"
-                  target="_blank">Illinois Engineering Achievement Scholarship</a> $1,000 scholarship, 2022 <br>
-                  Merit-Based Scholarships.
+          <details>
+            <summary class="lead">
+              <a
+              href="https://math.illinois.edu/research/igl"
+              target="_blank">Illinois Geometry Lab Scholar</a> 2022 
+            </summary>
+              <p class="lead" align="justify">
+                At the lab, undergraduate students work closely with graduate students and faculty on visualization projects set 
+                forth by faculty members, as well as to bring mathematics to the community through school visits and other activities. 
+                IGL research is supported by the Department of Mathematics and the Office of Public Engagement at the University of 
+                Illinois at Urbana-Champaign.          
               </p>
-            </li>
+          </details>  
 
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://healtheng.illinois.edu/jumparches"
-                  target="_blank">HCESC Jump ARCHES Scholar</a> $6,000 scholarship, 2020 <br>
-                  An OSF HealthCare, University of Illinois Urbana-Champaign, and University of Illinois College of Medicine Peoria 
-                  Collaboration funding interdisciplinary research between engineers, clinicians, and social scientists to improve the 
-                  future of health care for all. Scholars work on a research project for one academic year.
+
+          <details>
+            <summary class="lead">
+              <a
+              href="https://pure.engr.illinois.edu"
+              target="_blank">PURE Scholar</a> 2020 
+            </summary>
+              <p class="lead" align="justify">
+                PURE is a student-run program that connects freshmen and sophomores with graduate students for semester-long engineering 
+                research projects. Our goal is to provide a portal for incoming students to take part in undergraduate research for the 
+                first time.        
               </p>
-            </li>
+          </details>  
 
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://grainger.illinois.edu/news/covid-19/covid19-wallofrecognition"
-                  target="_blank">COVID-19 Wall of Recognition in Engineering</a> 2021 <br>
-                  In late 2020, The Grainger College of Engineering asked its faculty and staff to nominate people who had gone 
-                  “above and beyond” in their response to the COVID-19 pandemic. Students who helped in new, unexpected ways.
-                  The response to our request was massive—just like the hours, attention, and skill that our college offered 
-                  the face of a global catastrophe. Hundreds of people’s names were submitted. A plaque recognizing all of 
-                  them will be installed in Engineering Hall. 
+          <details>
+            <summary class="lead">
+              <a
+              href="https://students.grainger.illinois.edu/jscholar/about/"
+              target="_blank">Edmund J. James Scholar</a> 2020 
+            </summary>
+              <p class="lead" align="justify">
+                The James Scholar Honors Program in the Grainger College of Engineering recognizes the talents of academically outstanding 
+                students promoting curricular/co-curricular activities.      
               </p>
-            </li>
-
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://math.illinois.edu/research/igl"
-                  target="_blank">Illinois Geometry Lab Scholar</a> 2022 <br>
-                  At the lab, undergraduate students work closely with graduate students and faculty on visualization projects set 
-                  forth by faculty members, as well as to bring mathematics to the community through school visits and other activities. 
-                  IGL research is supported by the Department of Mathematics and the Office of Public Engagement at the University of 
-                  Illinois at Urbana-Champaign.
-              </p>
-            </li>
-
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://pure.engr.illinois.edu"
-                  target="_blank">PURE Scholar</a> 2020 <br>
-                  PURE is a student-run program that connects freshmen and sophomores with graduate students for semester-long engineering 
-                  research projects. Our goal is to provide a portal for incoming students to take part in undergraduate research for the 
-                  first time.
-              </p>
-            </li>
-
-            <li>
-              <p class="lead" align="justify"><a
-                  href="https://students.grainger.illinois.edu/jscholar/about/"
-                  target="_blank">Edmund J. James Scholar</a> 2020 <br>
-                  The James Scholar Honors Program in the Grainger College of Engineering recognizes the talents of academically outstanding 
-                  students promoting curricular/co-curricular activities.
-              </p>
-            </li>
-
-          </ul>
+          </details>  
         </div>
       </div>
     </div>
@@ -790,9 +821,9 @@
   <section id="hobbies"  class="bg-light">
     <div class="container">
       <div class="row">
-        <div class="col-lg-8 mx-auto">
+        <div class="col-lg-32 mx-auto" style="width:100%;">
           <h2>Recreational Interests &#x26BD;</h2>
-          <p class="lead">Painting, cooking, watching anime</p>
+          <p class="lead">Painting, cooking</p>
           <!-- <p class="lead">(In no particular order...)<br>
             Outdoor running, Crossfit, weightlifting, Bodyattack, 
             Bodycombat, traveling, nature, pets, tech, rom-coms, pop music, cooking, coffee, video gaming, Calvin and Hobbes</p> -->
@@ -801,10 +832,30 @@
     </div>
   </section>
 
+  <section id="references">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-32 mx-auto" style="width:100%;">
+          <h2>References</h2> 
+
+          <ul>
+            <li><a href="https://research.nvidia.com/person/wen-mei-hwu"><i>Prof. Wen-mei Hwu</i></a> - AMD Jerry Sanders Chair Emeritus Professor, UIUC &  Senior Distinguished Research Scientist, NVIDIA </li>
+            <li><a href="https://cs.illinois.edu/about/people/faculty/kcchang"><i>Prof. Kevin Chenchuan Chang </i></a> - Professor, UIUC</li>
+            <li><a href="https://msharmavikram.github.io/index.html"><i>Dr. Vikram Sharma Mailthody</i></a> -  Research Scientist, NVIDIA Research</li>
+            <li><a href="https://www.linkedin.com/in/xiang-song-488a633a/"><i>Dr. Xiang Song</i></a> -  Senior Applied Scientist, Amazon AWS</li>
+            <li><a href="https://www.linkedin.com/in/gabemochoa/"><i>Mr. Gabriel Ochoa</i></a> -  Software Engineering Team Lead, Facebook, Meta Inc.</li>
+          </ul>
+        </div> 
+        <p class="lead">
+          <a href="mailto:arpandeepk@gmail.com?subject=Request to get the contact information of reviewers&body=Hello, Please send the email addresses of your reviewers. Sincerely,">Please click here to get the contact information of the reviewers.</a>
+        </p>
+      </div>
+    </div>
+  </section>
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Arpandeep Khatua 2020</p>
+      <p class="m-0 text-center text-white">Copyright &copy; Arpandeep Khatua 2022</p>
     </div>
     <!-- /.container -->
   </footer>
