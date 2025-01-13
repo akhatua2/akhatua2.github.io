@@ -81,7 +81,7 @@ export default function About() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold tracking-tight">
-                  Hi! 👋 <br />I'm Arpan.
+                  Hi! 👋 <br />I&apos;m Arpan.
                 </h1>
                 <h2 className="text-3xl sm:text-4xl font-medium bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
                   MS Student at Stanford AI Lab
@@ -176,7 +176,7 @@ export default function About() {
             >
               <h2 className="text-3xl font-bold mb-6">About Me</h2>
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                I'm a Computer Science MS student at Stanford University and Research Assistant at Stanford AI Lab.
+                I&apos;m a Computer Science MS student at Stanford University and Research Assistant at Stanford AI Lab.
                 I am passionate about building socially intelligent AI systems and improving human-AI interaction.
               </p>
               <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed mb-8">

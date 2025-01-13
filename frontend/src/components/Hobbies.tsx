@@ -60,7 +60,7 @@ const hobbies = [
 
 export default function Hobbies() {
   return (
-    <Section id="hobbies" className="relative">
+    <Section id="Hobbies" className="relative">
       <motion.h2
         className="text-3xl font-bold mb-24 text-center relative"
         initial={{ opacity: 0, y: 20 }}

@@ -18,7 +18,7 @@ export default function Contact() {
 
         <div className="flex flex-col items-center gap-8">
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl text-center">
-            I'm always open to discussing research collaborations, AI/ML projects, or opportunities in tech. Feel free to reach out!
+            I&apos;m always open to discussing research collaborations, AI/ML projects, or opportunities in tech. Feel free to reach out!
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">

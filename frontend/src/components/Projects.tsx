@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Section from "./Section"
 import { BsTrophy } from "react-icons/bs"
+import Image from "next/image"
 
 const projects = [
   {
@@ -64,11 +65,12 @@ export default function Projects() {
             transition={{ delay: index * 0.1 }}
           >
             <div className="flex items-start gap-6">
-              <div className="w-24 h-24 flex-shrink-0">
-                <img
+              <div className="w-24 h-24 flex-shrink-0 relative">
+                <Image
                   src={project.imageUrl}
                   alt={project.title}
-                  className="w-full h-full object-cover rounded-lg shadow-sm"
+                  fill
+                  className="object-cover rounded-lg shadow-sm"
                 />
               </div>
               <div className="flex-grow min-w-0">

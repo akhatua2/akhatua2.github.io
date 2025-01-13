@@ -3,7 +3,6 @@
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
 import { useState } from "react"
-import { BsChevronLeft, BsChevronRight } from "react-icons/bs"
 
 const images = [
   {
