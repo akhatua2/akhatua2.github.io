@@ -3,17 +3,15 @@
 import { useInView } from "framer-motion"
 import { useRef, useEffect } from "react"
 import { useActiveSectionContext } from "@/context/active-section-context"
-import { SectionName } from "@/context/active-section-context"
+import { SectionName } from "@/lib/data"
 
-export default function Section({
-  children,
-  id,
-  className = "",
-}: {
+type SectionProps = {
   children: React.ReactNode
   id: SectionName
   className?: string
-}) {
+}
+
+export default function Section({ children, id, className = "" }: SectionProps) {
   const ref = useRef<HTMLElement>(null)
   const { setActiveSection, timeOfLastClick } = useActiveSectionContext()
   const isInView = useInView(ref, {
@@ -30,7 +28,7 @@ export default function Section({
     <section
       ref={ref}
       id={id.toLowerCase()}
-      className={`scroll-mt-28 mb-28 max-w-[75rem] w-[90%] text-center sm:mb-40 ${className}`}
+      className={`scroll-mt-28 mb-16 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 ${className}`}
     >
       {children}
     </section>

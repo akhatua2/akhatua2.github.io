@@ -1,62 +1,66 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { BsLinkedin } from "react-icons/bs"
-import { HiMail } from "react-icons/hi"
 import Section from "./Section"
+import { BsEnvelope, BsGithub, BsLinkedin } from "react-icons/bs"
+import { SiGooglescholar } from "react-icons/si"
+import { HiOutlineDocumentText } from "react-icons/hi"
 
 export default function Contact() {
   return (
-    <Section id="Contact">
-      <motion.h2
-        className="text-4xl font-medium capitalize mb-16 text-center"
-        initial={{ opacity: 0, y: 100 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        Contact Me
-      </motion.h2>
-
+    <Section id="Contact" className="pt-16 pb-8 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <motion.div
-        className="max-w-3xl mx-auto space-y-12"
-        initial={{ opacity: 0, y: 50 }}
+        className="max-w-[75rem] mx-auto"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <p className="text-xl text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-          I'm always interested in collaborating on exciting AI/ML projects. Feel free to reach out if you'd like to work together or just want to connect!
-        </p>
+        <h2 className="text-2xl font-medium mb-8 text-center">Get in Touch</h2>
 
-        <div className="flex justify-center gap-8">
-          <a
-            href="mailto:your.email@example.com"
-            className="flex items-center gap-3 text-lg font-medium hover:text-gray-950 dark:hover:text-gray-200 transition-colors"
-          >
-            <HiMail className="text-2xl" />
-            Email Me
-          </a>
-          <a
-            href="https://linkedin.com/in/your-profile"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-3 text-lg font-medium hover:text-gray-950 dark:hover:text-gray-200 transition-colors"
-          >
-            <BsLinkedin className="text-2xl" />
-            LinkedIn
-          </a>
-        </div>
+        <div className="flex flex-col items-center gap-8">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl text-center">
+            I'm always open to discussing research collaborations, AI/ML projects, or opportunities in tech. Feel free to reach out!
+          </p>
 
-        <div className="mt-16">
-          <h3 className="text-2xl font-semibold mb-8 text-center">References</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="text-center">
-              <h4 className="text-xl font-medium">Dr. John Doe</h4>
-              <p className="text-lg text-gray-600 dark:text-gray-400">Professor of Computer Science</p>
-              <p className="text-lg text-gray-600 dark:text-gray-400">Stanford University</p>
-            </div>
-            <div className="text-center">
-              <h4 className="text-xl font-medium">Jane Smith</h4>
-              <p className="text-lg text-gray-600 dark:text-gray-400">Senior Research Scientist</p>
-              <p className="text-lg text-gray-600 dark:text-gray-400">Meta AI Research</p>
-            </div>
+          <div className="flex flex-wrap justify-center gap-6">
+            <a 
+              href="mailto:arpandeepk@gmail.com"
+              className="flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+            >
+              <BsEnvelope className="text-xl" />
+              <span>Email</span>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/arpandeepkhatua/"
+              target="_blank"
+              className="flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+            >
+              <BsLinkedin className="text-xl" />
+              <span>LinkedIn</span>
+            </a>
+            <a 
+              href="https://github.com/akhatua2"
+              target="_blank"
+              className="flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+            >
+              <BsGithub className="text-xl" />
+              <span>GitHub</span>
+            </a>
+            <a 
+              href="https://scholar.google.com/citations?user=YOUR_ID"
+              target="_blank"
+              className="flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+            >
+              <SiGooglescholar className="text-xl" />
+              <span>Scholar</span>
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              className="flex items-center gap-2 px-6 py-3 text-base font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+            >
+              <HiOutlineDocumentText className="text-xl" />
+              <span>Resume</span>
+            </a>
           </div>
         </div>
       </motion.div>

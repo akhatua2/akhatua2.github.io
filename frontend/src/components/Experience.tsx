@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion"
 import Section from "./Section"
+import Image from "next/image"
 
 const experiences = [
   {
     title: "Research Assistant",
-    company: "Stanford AI Lab",
+    company: "Stanford University",
     location: "Stanford, CA",
     description: [
       "Developing socially intelligent agent systems for non-competitive non-collaborative goals under Prof. Diyi Yang",
@@ -39,61 +40,50 @@ const experiences = [
     ],
     date: "May 2022 - Aug 2022",
     icon: "/meta.png",
-  },
-  {
-    title: "Undergraduate Researcher",
-    company: "IMPACT Lab, UIUC",
-    location: "Champaign, IL",
-    description: [
-      "Generated the largest publicly available graph dataset - Illinois Graph Benchmark (IGB)",
-      "Combined Microsoft Academic Graph (MAG) and Semantic Scholar databases to annotate 162× more data",
-      "Published paper at KDD '23 on massive GNN datasets"
-    ],
-    date: "Sep 2021 - Dec 2022",
-    icon: "/c3sr_logo.png",
-  },
+  }
 ]
 
 export default function Experience() {
   return (
     <Section id="Experience">
-      <div>
-        <motion.h2
-          className="text-4xl font-medium capitalize mb-16 text-center"
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          My Experience
-        </motion.h2>
-
+      <div className="max-w-[75rem] mx-auto">
+        <h2 className="text-3xl font-bold mb-16 text-center">Experience</h2>
+        
         <div className="space-y-12">
           {experiences.map((experience, index) => (
             <motion.div
               key={index}
-              className="bg-gray-100 p-8 rounded-xl dark:bg-white/10 dark:hover:bg-white/20"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="group"
             >
-              <div className="flex items-start gap-6">
-                <div className="relative w-16 h-16 flex-shrink-0">
-                  <img
+              <div className="flex items-start gap-8">
+                {/* Company logo */}
+                <div className="flex-shrink-0 mt-1">
+                  <Image
                     src={experience.icon}
                     alt={experience.company}
-                    className="w-full h-full object-contain"
+                    width={40}
+                    height={40}
+                    className="grayscale group-hover:grayscale-0 transition rounded-full"
                   />
                 </div>
+
+                {/* Content */}
                 <div className="flex-grow">
-                  <h3 className="text-2xl font-semibold">{experience.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-lg">
-                    {experience.company} • {experience.location}
-                  </p>
-                  <p className="text-gray-500 text-base mb-6">{experience.date}</p>
-                  <ul className="list-disc list-inside space-y-3">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h3 className="text-xl font-semibold">{experience.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400">
+                        {experience.company} • {experience.location}
+                      </p>
+                    </div>
+                    <time className="text-sm text-gray-500 whitespace-nowrap">{experience.date}</time>
+                  </div>
+                  <ul className="list-disc text-gray-700 dark:text-gray-300 ml-4 space-y-2">
                     {experience.description.map((point, idx) => (
-                      <li key={idx} className="text-gray-700 dark:text-gray-300 text-lg">
-                        {point}
-                      </li>
+                      <li key={idx} className="text-base">{point}</li>
                     ))}
                   </ul>
                 </div>
