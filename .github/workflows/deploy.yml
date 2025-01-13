@@ -34,11 +34,12 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Install dependencies
+      - name: Clean install dependencies
         working-directory: ./frontend
         run: |
+          rm -rf node_modules .next
           npm install
-          npm install -D tailwindcss postcss autoprefixer
+          npm install -D tailwindcss@latest postcss@latest autoprefixer@latest
           npx tailwindcss init -p
         
       - name: Cache Next.js build
