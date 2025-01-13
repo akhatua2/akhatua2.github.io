@@ -1,7 +1,15 @@
 "use client"
 
 import { createContext, useContext, useState } from "react"
-import { SectionName } from "@/lib/data"
+
+export type SectionName =
+  | "About"
+  | "Experience"
+  | "Education"
+  | "Publications"
+  | "Projects"
+  | "Hobbies"
+  | "Contact"
 
 type ActiveSectionContextType = {
   activeSection: SectionName

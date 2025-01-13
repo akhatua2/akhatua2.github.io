@@ -8,7 +8,6 @@ import { SiGooglescholar } from "react-icons/si"
 import Section from "./Section"
 import PhotoGallery from "./PhotoGallery"
 import { useEffect, useState } from "react"
-import Publications from "./Publications"
 
 const newsItems = [
   {
@@ -233,9 +232,6 @@ export default function About() {
           </div>
         </div>
       </Section>
-
-      {/* Publications Section */}
-      <Publications />
     </>
   )
 } 
