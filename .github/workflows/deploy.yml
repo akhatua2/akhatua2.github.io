@@ -75,11 +75,13 @@ jobs:
           echo "Checking node_modules for typescript:"
           ls -la node_modules/ | grep typescript || echo "typescript not found"
           echo ""
-          echo "Using npx with typescript package:"
-          npx typescript --version || echo "npx typescript failed"
-          echo ""
-          echo "TypeScript config check:"
-          npx typescript --showConfig || echo "TypeScript showConfig failed"
+          echo "Trying different TypeScript access methods:"
+          echo "Method 1 - Direct binary:"
+          ./node_modules/.bin/tsc --version 2>/dev/null || echo "Direct binary failed"
+          echo "Method 2 - npx tsc:"
+          npx tsc --version 2>/dev/null || echo "npx tsc failed"  
+          echo "Method 3 - npm run (if tsc script exists):"
+          npm run tsc --version 2>/dev/null || echo "npm run tsc failed"
       
       - name: Run ESLint with Debugging
         working-directory: ./frontend
