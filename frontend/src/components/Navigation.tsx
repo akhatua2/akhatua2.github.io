@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useActiveSectionContext } from "@/context/active-section-context"
-import type { SectionName } from "@/context/active-section-context"
+import { useActiveSectionContext } from "../context/active-section-context"
+import type { SectionName } from "../context/active-section-context"
 
 const links = [
   {

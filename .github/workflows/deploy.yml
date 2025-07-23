@@ -37,18 +37,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Debug build environment
-        working-directory: ./frontend
-        run: |
-          echo "=== Current working directory ==="
-          pwd
-          echo "=== Contents of current directory ==="
-          ls -la
-          echo "=== Checking tsconfig.json ==="
-          cat tsconfig.json
-          echo "=== Node.js module resolution test ==="
-          node -e "console.log('__dirname:', __dirname); console.log('process.cwd():', process.cwd());"
-          
       - name: Build with Next.js
         working-directory: ./frontend
         run: npm run build

@@ -2,8 +2,8 @@
 
 import { useInView } from "framer-motion"
 import { useRef, useEffect } from "react"
-import { useActiveSectionContext } from "@/context/active-section-context"
-import { SectionName } from "@/lib/data"
+import { useActiveSectionContext } from "../context/active-section-context"
+import { SectionName } from "../lib/data"
 
 type SectionProps = {
   children: React.ReactNode
