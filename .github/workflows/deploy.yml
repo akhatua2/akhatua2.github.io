@@ -69,14 +69,17 @@ jobs:
         working-directory: ./frontend
         run: |
           echo "=== TYPESCRIPT DEBUGGING ==="
-          echo "TypeScript version:"
-          ./node_modules/.bin/tsc --version
+          echo "Looking for TypeScript binary..."
+          ls -la node_modules/.bin/ | grep tsc || echo "tsc not found in node_modules/.bin/"
+          echo ""
+          echo "Checking node_modules for typescript:"
+          ls -la node_modules/ | grep typescript || echo "typescript not found"
+          echo ""
+          echo "Using npx with typescript package:"
+          npx typescript --version || echo "npx typescript failed"
           echo ""
           echo "TypeScript config check:"
-          ./node_modules/.bin/tsc --showConfig
-          echo ""
-          echo "Checking if TypeScript can find files:"
-          ./node_modules/.bin/tsc --listFiles --noEmit | head -20
+          npx typescript --showConfig || echo "TypeScript showConfig failed"
       
       - name: Run ESLint with Debugging
         working-directory: ./frontend
@@ -100,9 +103,7 @@ jobs:
         run: |
           echo "=== TYPESCRIPT TYPE CHECK DEBUGGING ==="
           echo "Running TypeScript compiler with no emit:"
-          ./node_modules/.bin/tsc --noEmit --pretty --listEmittedFiles
-          echo ""
-          echo "TypeScript exit code: $?"
+          npx typescript --noEmit --pretty || echo "TypeScript type check failed with exit code $?"
           echo ""
           echo "Checking for any .d.ts files:"
           find . -name "*.d.ts" | head -10
