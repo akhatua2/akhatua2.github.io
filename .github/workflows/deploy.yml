@@ -32,7 +32,9 @@ jobs:
       
       - name: Install dependencies
         working-directory: ./frontend
-        run: npm ci
+        run: |
+          npm ci --include=dev
+          npm ls tailwindcss
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
