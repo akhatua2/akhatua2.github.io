@@ -26,7 +26,12 @@ export default function ActiveSectionContextProvider({
   children: React.ReactNode
 }) {
   const [activeSection, setActiveSection] = useState<SectionName>("About")
-  const [timeOfLastClick, setTimeOfLastClick] = useState(0)
+  const [timeOfLastClick, setTimeOfLastClick] = useState(() => {
+    if (typeof window !== "undefined") {
+      return Date.now()
+    }
+    return 0
+  })
 
   return (
     <ActiveSectionContext.Provider
