@@ -70,13 +70,13 @@ jobs:
         run: |
           echo "=== TYPESCRIPT DEBUGGING ==="
           echo "TypeScript version:"
-          npx tsc --version
+          ./node_modules/.bin/tsc --version
           echo ""
           echo "TypeScript config check:"
-          npx tsc --showConfig
+          ./node_modules/.bin/tsc --showConfig
           echo ""
           echo "Checking if TypeScript can find files:"
-          npx tsc --listFiles --noEmit | head -20
+          ./node_modules/.bin/tsc --listFiles --noEmit | head -20
       
       - name: Run ESLint with Debugging
         working-directory: ./frontend
@@ -100,7 +100,7 @@ jobs:
         run: |
           echo "=== TYPESCRIPT TYPE CHECK DEBUGGING ==="
           echo "Running TypeScript compiler with no emit:"
-          npx tsc --noEmit --pretty --listEmittedFiles
+          ./node_modules/.bin/tsc --noEmit --pretty --listEmittedFiles
           echo ""
           echo "TypeScript exit code: $?"
           echo ""
