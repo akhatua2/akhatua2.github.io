@@ -1,0 +1,53 @@
+# Build artifacts (populated by GitHub Actions during deployment)
+# These files should NOT be in source control but ARE needed in root for GitHub Pages
+*.html
+*.txt
+_next/
+404/
+favicon.ico
+
+# Images (these get copied from frontend/public during build)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.webp
+*.pdf
+
+# Directories created during build
+hobbies/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js
+frontend/.next/
+frontend/out/
+frontend/.env*.local
+
+# Operating System
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp

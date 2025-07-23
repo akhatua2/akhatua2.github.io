@@ -1,1 +1,13 @@
-# Cache clear - Tue Jul 22 23:21:45 PDT 2025
+# Personal Website
+
+My personal website built with Next.js.
+
+**Live at:** [akhatua2.github.io](https://akhatua2.github.io)
+
+## Development
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
