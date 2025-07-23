@@ -26,20 +26,127 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22"
+          node-version: "23"
+      
+      - name: Debug Environment
+        working-directory: ./frontend
+        run: |
+          echo "=== ENVIRONMENT DEBUGGING ==="
+          echo "Node.js version: $(node --version)"
+          echo "npm version: $(npm --version)"
+          echo "Working directory: $(pwd)"
+          echo "Home directory: $HOME"
+          echo "PATH: $PATH"
+          echo ""
+          echo "=== DIRECTORY CONTENTS ==="
+          ls -la
+          echo ""
+          echo "=== PACKAGE.JSON ==="
+          cat package.json
+          echo ""
+          echo "=== TSCONFIG.JSON ==="
+          cat tsconfig.json
+          echo ""
+          echo "=== ESLINT CONFIG ==="
+          cat eslint.config.mjs
+          echo ""
+          echo "=== SRC DIRECTORY STRUCTURE ==="
+          find src -type f -name "*.ts" -o -name "*.tsx" | head -20
       
       - name: Install dependencies
         working-directory: ./frontend
         run: |
+          echo "=== INSTALLING DEPENDENCIES ==="
           npm install
+          echo ""
+          echo "=== DEPENDENCY CHECK ==="
           npm ls tailwindcss autoprefixer postcss
+          echo ""
+          echo "=== ALL DEPENDENCIES ==="
+          npm ls --depth=0
+      
+      - name: Debug TypeScript Setup
+        working-directory: ./frontend
+        run: |
+          echo "=== TYPESCRIPT DEBUGGING ==="
+          echo "TypeScript version:"
+          npx tsc --version
+          echo ""
+          echo "TypeScript config check:"
+          npx tsc --showConfig
+          echo ""
+          echo "Checking if TypeScript can find files:"
+          npx tsc --listFiles --noEmit | head -20
+      
+      - name: Run ESLint with Debugging
+        working-directory: ./frontend
+        continue-on-error: true
+        run: |
+          echo "=== ESLINT DEBUGGING ==="
+          echo "ESLint version:"
+          npx eslint --version
+          echo ""
+          echo "ESLint config test:"
+          npx eslint --print-config src/app/page.tsx
+          echo ""
+          echo "Running ESLint with maximum detail:"
+          npx eslint . --ext .ts,.tsx --max-warnings 0 --format detailed
+          echo ""
+          echo "ESLint exit code: $?"
+      
+      - name: Run TypeScript Type Check with Debugging
+        working-directory: ./frontend
+        continue-on-error: true
+        run: |
+          echo "=== TYPESCRIPT TYPE CHECK DEBUGGING ==="
+          echo "Running TypeScript compiler with no emit:"
+          npx tsc --noEmit --pretty --listEmittedFiles
+          echo ""
+          echo "TypeScript exit code: $?"
+          echo ""
+          echo "Checking for any .d.ts files:"
+          find . -name "*.d.ts" | head -10
+      
+      - name: Run Next.js Lint
+        working-directory: ./frontend
+        continue-on-error: true
+        run: |
+          echo "=== NEXT.JS LINT DEBUGGING ==="
+          echo "Running Next.js lint:"
+          npm run lint -- --max-warnings 0
+          echo "Next.js lint exit code: $?"
+      
+      - name: Debug Import Issues
+        working-directory: ./frontend
+        run: |
+          echo "=== IMPORT DEBUGGING ==="
+          echo "Checking for import issues in key files:"
+          echo ""
+          echo "=== LAYOUT.TSX ==="
+          cat src/app/layout.tsx
+          echo ""
+          echo "=== PAGE.TSX ==="
+          cat src/app/page.tsx
+          echo ""
+          echo "=== NAVIGATION.TSX ==="
+          cat src/components/Navigation.tsx
+          echo ""
+          echo "=== ACTIVE SECTION CONTEXT ==="
+          cat src/context/active-section-context.tsx
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
-      - name: Build with Next.js
+      - name: Build with Next.js (with debugging)
         working-directory: ./frontend
-        run: npm run build
+        run: |
+          echo "=== NEXT.JS BUILD DEBUGGING ==="
+          echo "Starting Next.js build..."
+          npm run build
+          echo "Build exit code: $?"
+          echo ""
+          echo "=== BUILD OUTPUT DIRECTORY ==="
+          ls -la out/
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
