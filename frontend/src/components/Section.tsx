@@ -28,7 +28,7 @@ export default function Section({ children, id, className = "" }: SectionProps) 
     <section
       ref={ref}
       id={id.toLowerCase()}
-      className={`scroll-mt-28 mb-16 max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 ${className}`}
+      className={`scroll-mt-28 mb-12 max-w-[1100px] mx-auto px-8 sm:px-12 lg:px-16 ${className}`}
     >
       {children}
     </section>

@@ -47,7 +47,6 @@ const education = [
       degree: "/senior_thesis.pdf"
     },
     achievements: [
-      "Perfect GPA (4.00/4.00)",
       "James Scholar Honors",
       "Dean's List (All Semesters)"
     ],

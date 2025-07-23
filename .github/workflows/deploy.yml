@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NODE_ENV: production
-      NEXT_PUBLIC_BASE_PATH: /personal_website
     steps:
       - name: Checkout
         uses: actions/checkout@v4
