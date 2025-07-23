@@ -57,7 +57,7 @@ jobs:
         working-directory: ./frontend
         run: |
           echo "=== INSTALLING DEPENDENCIES ==="
-          npm install
+          npm ci
           echo ""
           echo "=== DEPENDENCY CHECK ==="
           npm ls tailwindcss autoprefixer postcss
