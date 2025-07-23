@@ -64,6 +64,9 @@ jobs:
           echo ""
           echo "=== ALL DEPENDENCIES ==="
           npm ls --depth=0
+          echo ""
+          echo "=== DEV DEPENDENCIES CHECK ==="
+          npm ls --only=dev --depth=0 || echo "No dev dependencies found"
       
       - name: Debug TypeScript Setup
         working-directory: ./frontend
