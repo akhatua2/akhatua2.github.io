@@ -6,17 +6,21 @@ _next/
 404/
 favicon.ico
 
-# Images (these get copied from frontend/public during build)
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-*.webp
-*.pdf
+# Build artifacts - Images in root (generated during deployment)
+# Allow images in frontend/public/ but ignore generated ones in root
+/*.png
+/*.jpg
+/*.jpeg
+/*.gif
+/*.svg
+/*.webp
+/*.pdf
 
-# Directories created during build
-hobbies/
+# Build artifacts - Directories in root (generated during deployment)  
+/hobbies/
+
+# But allow all assets in frontend/public/ (these are source files)
+!frontend/public/**
 
 # Node.js
 node_modules/
