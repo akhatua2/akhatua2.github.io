@@ -105,7 +105,7 @@ jobs:
         run: |
           echo "=== TYPESCRIPT TYPE CHECK DEBUGGING ==="
           echo "Running TypeScript compiler with no emit:"
-          npx typescript --noEmit --pretty || echo "TypeScript type check failed with exit code $?"
+          npx tsc --noEmit --pretty || echo "TypeScript type check failed with exit code $?"
           echo ""
           echo "Checking for any .d.ts files:"
           find . -name "*.d.ts" | head -10
