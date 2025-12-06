@@ -7,7 +7,7 @@ import Calendar from "@/components/Calendar";
 
 export default function Home() {
   const [windowHeight, setWindowHeight] = useState("100vh");
-  const [showRealImage, setShowRealImage] = useState(true);
+  const [showRealImage, setShowRealImage] = useState(false);
 
   useEffect(() => {
     const updateHeight = () => {
@@ -24,7 +24,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <div
-        className="flex flex-col justify-center relative pt-20 sm:pt-24"
+        className="flex flex-col justify-center relative"
         style={{ minHeight: windowHeight }}
       >
         <div className="max-w-[65rem] mx-auto w-full px-4 sm:px-6 space-y-8 sm:space-y-12">
@@ -119,7 +119,7 @@ export default function Home() {
               className="w-full flex justify-center md:justify-end"
             >
               <div className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80">
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   <motion.img
                     key={showRealImage ? "real" : "transparent"}
                     src={showRealImage ? "/me_real.png" : "/me-transparent.png"}
@@ -129,7 +129,7 @@ export default function Home() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
                   />
                 </AnimatePresence>
               </div>
