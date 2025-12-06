@@ -1,19 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 import JsBarcode from "jsbarcode";
+import { useEffect, useRef } from "react";
 
 interface UniversityIDProps {
   name: string;
   studentId: string;
   degree: string;
-  department: string;
-  location: string;
+  department?: string;
+  location?: string;
   startDate: string;
   endDate: string;
-  highlights: string[];
-  statusBadges: string[];
+  highlights?: string[];
+  statusBadges?: string[];
   photo?: string;
   university: "Stanford" | "UIUC";
   gpa?: string;
@@ -23,15 +23,10 @@ export default function UniversityID({
   name,
   studentId,
   degree,
-  department,
-  location,
   startDate,
   endDate,
-  highlights,
-  statusBadges,
   photo,
   university,
-  gpa,
 }: UniversityIDProps) {
   const universityColors = {
     Stanford: {
@@ -57,10 +52,10 @@ export default function UniversityID({
 
   const colors = universityColors[university];
   const barcodeRef = useRef<SVGSVGElement>(null);
-  
+
   // URL to encode in barcode
   const barcodeUrl = "https://www.linkedin.com/in/arpandeepkhatua/";
-  
+
   // Generate barcode on mount
   useEffect(() => {
     if (barcodeRef.current) {
@@ -77,10 +72,10 @@ export default function UniversityID({
         console.error("Error generating barcode:", error);
       }
     }
-  }, [colors.accent, barcodeUrl]);
-  
+  }, [colors.accent]);
+
   // Calculate expiration date (typically 4-5 years from start for undergrad, 2-3 for grad)
-  const getExpirationDate = () => {
+  const _getExpirationDate = () => {
     if (endDate === "Present") {
       return "Valid Until Graduation";
     }
@@ -89,11 +84,10 @@ export default function UniversityID({
     return `Expires: ${gradYear}`;
   };
 
-
   // Format date for "Issued" field
   const formatIssueDate = () => {
-    if (startDate.includes("Sep")) return "09/01/" + startDate.split(" ")[1];
-    if (startDate.includes("Aug")) return "08/15/" + startDate.split(" ")[1];
+    if (startDate.includes("Sep")) return `09/01/${startDate.split(" ")[1]}`;
+    if (startDate.includes("Aug")) return `08/15/${startDate.split(" ")[1]}`;
     return startDate;
   };
 
@@ -104,35 +98,37 @@ export default function UniversityID({
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
       className="bg-background w-full relative overflow-hidden"
-      style={{ 
-        borderRadius: '8px',
-        border: '1px solid #e5e5e5',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.1)'
+      style={{
+        borderRadius: "8px",
+        border: "1px solid #e5e5e5",
+        boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
       }}
     >
       {/* Top Section: Stripe + University Name */}
-      <div 
+      <div
         className="flex items-center relative"
         style={university === "UIUC" ? { backgroundColor: colors.headerBg } : {}}
       >
         {/* Thin accent stripe on left */}
-        <div 
+        <div
           className="h-3 flex-shrink-0"
-          style={{ 
-            width: '12px',
-            backgroundColor: colors.accent 
+          style={{
+            width: "12px",
+            backgroundColor: colors.accent,
           }}
         ></div>
         {/* University name */}
         <div className="flex-1 px-3 py-2">
-          <p 
+          <p
             className="text-sm font-semibold"
-            style={{ 
+            style={{
               color: university === "UIUC" ? colors.headerText : colors.accentText,
-              fontFamily: 'Georgia, serif'
+              fontFamily: "Georgia, serif",
             }}
           >
-            {university === "Stanford" ? "Stanford University" : "University of Illinois Urbana-Champaign"}
+            {university === "Stanford"
+              ? "Stanford University"
+              : "University of Illinois Urbana-Champaign"}
           </p>
         </div>
       </div>
@@ -143,16 +139,16 @@ export default function UniversityID({
         <div className="flex gap-4 items-start">
           {/* Left: Name, ID, Student */}
           <div className="flex-1">
-            <p className="text-base font-semibold mb-0.5 text-foreground">
-              {name}
-            </p>
-            <p 
-              className="text-2xl font-bold mb-0.5"
-              style={{ color: colors.accentText }}
-            >
+            <p className="text-base font-semibold mb-0.5 text-foreground">{name}</p>
+            <p className="text-2xl font-bold mb-0.5" style={{ color: colors.accentText }}>
               {studentId}
             </p>
-            <p className="text-sm text-muted" style={{ marginBottom: 0, marginTop: 0, lineHeight: '1', paddingBottom: 0 }}>Student</p>
+            <p
+              className="text-sm text-muted"
+              style={{ marginBottom: 0, marginTop: 0, lineHeight: "1", paddingBottom: 0 }}
+            >
+              Student
+            </p>
           </div>
           {/* Right: Logo */}
           <div className="flex-shrink-0 w-24 flex items-start justify-center">
@@ -167,7 +163,7 @@ export default function UniversityID({
         </div>
 
         {/* Row 2: Photo and Barcode */}
-        <div className="flex gap-4 items-end" style={{ marginTop: '-16px' }}>
+        <div className="flex gap-4 items-end" style={{ marginTop: "-16px" }}>
           {/* Left: Photo */}
           <div className="w-24 h-28 bg-muted/10 flex items-center justify-center overflow-hidden flex-shrink-0">
             {photo ? (
@@ -194,13 +190,10 @@ export default function UniversityID({
               <span className="text-xs font-semibold text-foreground">{formatIssueDate()}</span>
             </div>
             {/* Right Side: Degree */}
-            <div className="text-xs text-muted">
-              {degree}
-            </div>
+            <div className="text-xs text-muted">{degree}</div>
           </div>
         </div>
       </div>
     </motion.div>
   );
 }
-

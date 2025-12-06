@@ -17,7 +17,7 @@ function getContributionLevel(color: string): number {
     "#216e39": 4, // 10+ contributions
     "#39d353": 4, // 10+ contributions (dark)
   };
-  
+
   return colorMap[color.toLowerCase()] ?? 0;
 }
 
@@ -58,7 +58,7 @@ async function fetchViaGraphQL(username: string, token?: string) {
       },
       body: JSON.stringify({
         query,
-        variables: { 
+        variables: {
           username,
           from: fromDate,
           to: toDate,
@@ -76,8 +76,7 @@ async function fetchViaGraphQL(username: string, token?: string) {
       throw new Error(data.errors[0]?.message || "GraphQL error");
     }
 
-    const calendar =
-      data.data?.user?.contributionsCollection?.contributionCalendar;
+    const calendar = data.data?.user?.contributionsCollection?.contributionCalendar;
     if (!calendar) {
       return null;
     }
@@ -86,8 +85,16 @@ async function fetchViaGraphQL(username: string, token?: string) {
     let total = 0;
 
     // Flatten weeks into days array and filter to 2025 only
-    calendar.weeks?.forEach((week: any) => {
-      week.contributionDays?.forEach((day: any) => {
+    interface ContributionDay {
+      date: string;
+      contributionCount: number;
+      color: string;
+    }
+    interface ContributionWeek {
+      contributionDays: ContributionDay[];
+    }
+    calendar.weeks?.forEach((week: ContributionWeek) => {
+      week.contributionDays?.forEach((day: ContributionDay) => {
         const date = new Date(day.date);
         if (date.getFullYear() === 2025) {
           const count = day.contributionCount || 0;
@@ -111,14 +118,11 @@ async function fetchViaGraphQL(username: string, token?: string) {
 async function fetchViaScraping(username: string) {
   try {
     // Fallback: Fetch GitHub contribution graph SVG
-    const response = await fetch(
-      `https://github.com/users/${username}/contributions`,
-      {
-        headers: {
-          "User-Agent": "Mozilla/5.0",
-        },
-      }
-    );
+    const response = await fetch(`https://github.com/users/${username}/contributions`, {
+      headers: {
+        "User-Agent": "Mozilla/5.0",
+      },
+    });
 
     if (!response.ok) {
       throw new Error("Failed to fetch contributions");
@@ -131,9 +135,9 @@ async function fetchViaScraping(username: string) {
       /<rect[^>]*data-date="([^"]*)"[^>]*data-count="([^"]*)"[^>]*fill="([^"]*)"[^>]*>/g;
     const days: Array<{ date: string; count: number; level: number }> = [];
     let total = 0;
-    let match;
+    let match: RegExpExecArray | null = rectRegex.exec(html);
 
-    while ((match = rectRegex.exec(html)) !== null) {
+    while (match !== null) {
       const dataDate = match[1];
       const dataCount = match[2];
       const fill = match[3];
@@ -152,14 +156,10 @@ async function fetchViaScraping(username: string) {
         let level = 0;
         if (fill) {
           if (fill.includes("#ebedf0") || fill.includes("#161b22")) level = 0;
-          else if (fill.includes("#9be9a8") || fill.includes("#0e4429"))
-            level = 1;
-          else if (fill.includes("#40c463") || fill.includes("#006d32"))
-            level = 2;
-          else if (fill.includes("#30a14e") || fill.includes("#26a641"))
-            level = 3;
-          else if (fill.includes("#216e39") || fill.includes("#39d353"))
-            level = 4;
+          else if (fill.includes("#9be9a8") || fill.includes("#0e4429")) level = 1;
+          else if (fill.includes("#40c463") || fill.includes("#006d32")) level = 2;
+          else if (fill.includes("#30a14e") || fill.includes("#26a641")) level = 3;
+          else if (fill.includes("#216e39") || fill.includes("#39d353")) level = 4;
         }
 
         days.push({
@@ -168,6 +168,7 @@ async function fetchViaScraping(username: string) {
           level,
         });
       }
+      match = rectRegex.exec(html);
     }
 
     if (days.length === 0) {
@@ -186,10 +187,7 @@ export async function GET(request: Request) {
   const username = searchParams.get("username");
 
   if (!username) {
-    return NextResponse.json(
-      { error: "Username is required" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Username is required" }, { status: 400 });
   }
 
   try {
@@ -215,4 +213,3 @@ export async function GET(request: Request) {
     );
   }
 }
-

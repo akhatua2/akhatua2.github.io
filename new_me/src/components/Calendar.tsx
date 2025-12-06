@@ -86,8 +86,18 @@ export default function Calendar() {
     );
 
   const monthNames = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
 
   const eventsForYear = events.filter((event) => {
@@ -106,13 +116,13 @@ export default function Calendar() {
     const hasEvents = monthEvents.length > 0;
 
     return (
-      <motion.div
+      <motion.article
         key={monthIndex}
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.35, delay: monthIndex * 0.03 }}
-        className="border-2 border-foreground bg-background shadow-[3px_3px_0px_0px_rgb(0,0,0)]"
+        className="border-2 border-foreground bg-background shadow-[3px_3px_0px_0px_rgb(0,0,0)] motion-safe:transition-all motion-reduce:transition-none"
       >
         {/* Month Header */}
         <div className="border-b-2 border-foreground px-4 py-3 bg-foreground text-background">
@@ -128,7 +138,7 @@ export default function Calendar() {
           {hasEvents ? (
             monthEvents.map((event, idx) => (
               <div
-                key={idx}
+                key={`${event.title}-${event.date}-${idx}`}
                 className="border border-dashed border-foreground/40 rounded-lg p-2.5 space-y-1"
               >
                 <div className="flex flex-wrap items-center gap-2">
@@ -172,7 +182,7 @@ export default function Calendar() {
                     event.title
                   )}
                 </h4>
-                <p 
+                <p
                   className="text-xs sm:text-sm text-foreground/80 leading-relaxed"
                   style={{ fontFamily: "var(--font-snowy), cursive" }}
                 >
@@ -184,7 +194,7 @@ export default function Calendar() {
             <p className="text-sm text-muted italic">No events this month.</p>
           )}
         </div>
-      </motion.div>
+      </motion.article>
     );
   };
 
@@ -195,31 +205,34 @@ export default function Calendar() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
+        className="motion-safe:transition-all motion-reduce:transition-none"
       >
         <div className="border-2 border-foreground bg-background shadow-[4px_4px_0px_0px_rgb(0,0,0)]">
           {/* Year Navigation */}
           <div className="flex items-center justify-between gap-3 px-4 py-3 border-b-2 border-foreground">
             <button
+              type="button"
               onClick={() => setCurrentYear(currentYear - 1)}
-              className="border border-foreground px-3 py-1 bg-background hover:bg-foreground hover:text-background transition font-semibold"
+              className="border border-foreground px-3 py-1 bg-background hover:bg-foreground hover:text-background transition font-semibold focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
               style={{ fontFamily: "var(--font-space)" }}
-              aria-label="Previous year"
+              aria-label={`Previous year, go to ${currentYear - 1}`}
             >
-              ←
+              <span aria-hidden="true">←</span>
             </button>
             <h2
-            className="text-2xl sm:text-3xl font-bold text-foreground text-center flex-1"
-            style={{ fontFamily: "var(--font-snowy), cursive" }}
+              className="text-2xl sm:text-3xl font-bold text-foreground text-center flex-1"
+              style={{ fontFamily: "var(--font-snowy), cursive" }}
             >
               {currentYear}
             </h2>
             <button
+              type="button"
               onClick={() => setCurrentYear(currentYear + 1)}
-              className="border border-foreground px-3 py-1 bg-background hover:bg-foreground hover:text-background transition font-semibold"
+              className="border border-foreground px-3 py-1 bg-background hover:bg-foreground hover:text-background transition font-semibold focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
               style={{ fontFamily: "var(--font-space)" }}
-              aria-label="Next year"
+              aria-label={`Next year, go to ${currentYear + 1}`}
             >
-              →
+              <span aria-hidden="true">→</span>
             </button>
           </div>
 
@@ -237,14 +250,16 @@ export default function Calendar() {
               Event Categories
             </h3>
             <div className="flex flex-wrap gap-2">
-              {(["Teaching", "Conference", "Mentoring", "Talk", "Travel", "Project"] as const).map((category) => (
-                <div
-                  key={category}
-                  className={`text-xs px-2 py-1 rounded ${getCategoryColor(category)}`}
-                >
-                  {category}
-                </div>
-              ))}
+              {(["Teaching", "Conference", "Mentoring", "Talk", "Travel", "Project"] as const).map(
+                (category) => (
+                  <div
+                    key={category}
+                    className={`text-xs px-2 py-1 rounded ${getCategoryColor(category)}`}
+                  >
+                    {category}
+                  </div>
+                )
+              )}
             </div>
           </div>
         </div>

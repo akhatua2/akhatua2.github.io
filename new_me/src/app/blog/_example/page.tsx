@@ -1,7 +1,7 @@
 "use client";
 
-import BlogPostLayout from "@/components/BlogPostLayout";
 import Image from "next/image";
+import BlogPostLayout from "@/components/BlogPostLayout";
 
 // Define your table of contents items
 const tocItems = [
@@ -26,25 +26,33 @@ export default function ExampleBlogPost() {
         Your introduction paragraph here...
       </p>
 
-      <h2 id="introduction" className="text-2xl font-bold mt-12 mb-6 scroll-mt-24" style={{ fontFamily: "var(--font-space)" }}>
+      <h2
+        id="introduction"
+        className="text-2xl font-bold mt-12 mb-6 scroll-mt-24"
+        style={{ fontFamily: "var(--font-space)" }}
+      >
         Introduction
       </h2>
 
-      <p className="text-base leading-relaxed text-foreground mb-6">
-        More content...
-      </p>
+      <p className="text-base leading-relaxed text-foreground mb-6">More content...</p>
 
-      <h2 id="section1" className="text-2xl font-bold mt-12 mb-6 scroll-mt-24" style={{ fontFamily: "var(--font-space)" }}>
+      <h2
+        id="section1"
+        className="text-2xl font-bold mt-12 mb-6 scroll-mt-24"
+        style={{ fontFamily: "var(--font-space)" }}
+      >
         Section 1
       </h2>
 
-      <h3 id="subsection1" className="text-xl font-bold mt-8 mb-4 scroll-mt-24" style={{ fontFamily: "var(--font-space)" }}>
+      <h3
+        id="subsection1"
+        className="text-xl font-bold mt-8 mb-4 scroll-mt-24"
+        style={{ fontFamily: "var(--font-space)" }}
+      >
         Subsection 1
       </h3>
 
-      <p className="text-base leading-relaxed text-foreground mb-6">
-        Subsection content...
-      </p>
+      <p className="text-base leading-relaxed text-foreground mb-6">Subsection content...</p>
 
       {/* Add images */}
       <div className="my-8">
@@ -59,28 +67,24 @@ export default function ExampleBlogPost() {
 
       {/* Add code blocks */}
       <div className="bg-muted/30 border-2 border-foreground rounded-lg p-4 my-6 font-mono text-sm overflow-x-auto">
-        <code className="text-foreground">
-          Your code here
-        </code>
+        <code className="text-foreground">Your code here</code>
       </div>
 
       {/* Add callout boxes */}
       <div className="border-2 border-foreground bg-background p-6 my-6 shadow-[4px_4px_0px_0px_rgb(0,0,0)]">
         <p className="text-xs uppercase tracking-widest text-muted mb-2 font-bold">Key Insight</p>
-        <p className="text-base leading-relaxed text-foreground mb-0">
-          Your insight here...
-        </p>
+        <p className="text-base leading-relaxed text-foreground mb-0">Your insight here...</p>
       </div>
 
-      <h2 id="conclusion" className="text-2xl font-bold mt-12 mb-6 scroll-mt-24" style={{ fontFamily: "var(--font-space)" }}>
+      <h2
+        id="conclusion"
+        className="text-2xl font-bold mt-12 mb-6 scroll-mt-24"
+        style={{ fontFamily: "var(--font-space)" }}
+      >
         Conclusion
       </h2>
 
-      <p className="text-base leading-relaxed text-foreground mb-6">
-        Conclusion content...
-      </p>
+      <p className="text-base leading-relaxed text-foreground mb-6">Conclusion content...</p>
     </BlogPostLayout>
   );
 }
-
-

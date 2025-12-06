@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import SearchBar from "@/components/SearchBar";
 
 export default function Navigation() {
@@ -31,14 +31,18 @@ export default function Navigation() {
             initial={false}
             animate={{ opacity: isScrolled ? 1 : 0, x: isScrolled ? 0 : -20 }}
             transition={{ duration: 0.2 }}
-            className="flex items-center gap-3"
-            style={{ visibility: isScrolled ? 'visible' : 'hidden', pointerEvents: isScrolled ? 'auto' : 'none' }}
+            className="flex items-center gap-3 motion-safe:transition-all motion-reduce:transition-none"
+            style={{
+              visibility: isScrolled ? "visible" : "hidden",
+              pointerEvents: isScrolled ? "auto" : "none",
+            }}
           >
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3" aria-label="Home - Arpan">
               <img
                 src="/me-transparent.png"
-                alt="Arpan"
+                alt=""
                 className="h-8 w-8 rounded-full object-cover"
+                aria-hidden="true"
               />
               <span
                 className="text-sm font-semibold text-foreground"
@@ -49,39 +53,54 @@ export default function Navigation() {
             </Link>
           </motion.div>
         </div>
-        <div className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted ml-auto overflow-x-auto">
-          <Link
-            href="/research"
-            className="link-underline hover:text-foreground whitespace-nowrap"
-            style={{ fontFamily: "var(--font-space)" }}
-          >
-            Research
-          </Link>
-          <Link
-            href="/experience"
-            className="link-underline hover:text-foreground whitespace-nowrap"
-            style={{ fontFamily: "var(--font-space)" }}
-          >
-            Experience
-          </Link>
-          <Link
-            href="/projects"
-            className="link-underline hover:text-foreground whitespace-nowrap"
-            style={{ fontFamily: "var(--font-space)" }}
-          >
-            Projects
-          </Link>
-          <Link
-            href="/blog"
-            className="link-underline hover:text-foreground whitespace-nowrap"
-            style={{ fontFamily: "var(--font-space)" }}
-          >
-            Blog
-          </Link>
-          <SearchBar />
-        </div>
+        <ul className="flex items-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted ml-auto overflow-x-auto list-none">
+          <li>
+            <Link
+              href="/research"
+              className="link-underline hover:text-foreground whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              style={{ fontFamily: "var(--font-space)" }}
+              aria-current={pathname === "/research" ? "page" : undefined}
+            >
+              Research
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/experience"
+              className="link-underline hover:text-foreground whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              style={{ fontFamily: "var(--font-space)" }}
+              aria-current={pathname === "/experience" ? "page" : undefined}
+            >
+              Experience
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/projects"
+              className="link-underline hover:text-foreground whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              style={{ fontFamily: "var(--font-space)" }}
+              aria-current={pathname === "/projects" ? "page" : undefined}
+            >
+              Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/blog"
+              className="link-underline hover:text-foreground whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+              style={{ fontFamily: "var(--font-space)" }}
+              aria-current={
+                pathname === "/blog" || pathname?.startsWith("/blog/") ? "page" : undefined
+              }
+            >
+              Blog
+            </Link>
+          </li>
+          <li>
+            <SearchBar />
+          </li>
+        </ul>
       </div>
     </nav>
   );
 }
-

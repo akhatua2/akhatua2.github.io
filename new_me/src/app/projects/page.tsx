@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
 import GitHubContributions from "@/components/GitHubContributions";
+import Navigation from "@/components/Navigation";
 
 export const metadata = {
   title: "Projects — Arpan Khatua",

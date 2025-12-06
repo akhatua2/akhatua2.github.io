@@ -7,12 +7,14 @@ export default function News() {
     {
       date: "Jan 2025",
       title: "New paper accepted to EMNLP 2025",
-      description: "Our work on detecting corpus-level knowledge inconsistencies in Wikipedia with LLMs was accepted.",
+      description:
+        "Our work on detecting corpus-level knowledge inconsistencies in Wikipedia with LLMs was accepted.",
     },
     {
       date: "Dec 2024",
       title: "Started at Stanford AI Lab",
-      description: "Excited to begin research on socially intelligent agent systems and human-AI interaction.",
+      description:
+        "Excited to begin research on socially intelligent agent systems and human-AI interaction.",
     },
     {
       date: "Sep 2024",
@@ -32,7 +34,7 @@ export default function News() {
       <div className="space-y-6">
         {newsItems.map((item, index) => (
           <motion.article
-            key={index}
+            key={`${item.date}-${item.title}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,5 +63,3 @@ export default function News() {
     </section>
   );
 }
-
-

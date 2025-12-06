@@ -1,5 +1,5 @@
-import Navigation from "@/components/Navigation";
 import Link from "next/link";
+import Navigation from "@/components/Navigation";
 
 export const metadata = {
   title: "Blog — Arpandeep Khatua",
@@ -10,14 +10,16 @@ const posts = [
     title: "What Actually Happens Inside LLMs When You Use RL?",
     date: "Jan 20, 2025",
     readingTime: "20 min read",
-    summary: "We peeked under the hood to see how reinforcement learning changes what's going on inside language models. Spoiler: it's way cooler than we thought.",
+    summary:
+      "We peeked under the hood to see how reinforcement learning changes what's going on inside language models. Spoiler: it's way cooler than we thought.",
     slug: "understanding-rl-internal-representations",
   },
   {
     title: "Can Moderation Help Multi-LLM Cooperation?",
     date: "Dec 15, 2024",
     readingTime: "18 min read",
-    summary: "What happens when you add a neutral moderator to help LLMs cooperate in strategic games? Spoiler: it works way better than you'd think.",
+    summary:
+      "What happens when you add a neutral moderator to help LLMs cooperate in strategic games? Spoiler: it works way better than you'd think.",
     slug: "llm-moderation-cooperation",
   },
 ];
@@ -41,6 +43,7 @@ export default function Blog() {
           {posts.map((post, index) => {
             const articleContent = (
               <article
+                key={post.slug || index}
                 className={`px-5 py-5 transition hover:bg-muted/20 ${post.slug ? "cursor-pointer" : ""} ${
                   index < posts.length - 1 ? "border-b border-border" : ""
                 }`}
@@ -55,9 +58,7 @@ export default function Blog() {
                 >
                   {post.title}
                 </h2>
-                <p className="mt-2 text-base leading-relaxed text-foreground">
-                  {post.summary}
-                </p>
+                <p className="mt-2 text-base leading-relaxed text-foreground">{post.summary}</p>
               </article>
             );
 
@@ -66,9 +67,7 @@ export default function Blog() {
                 {articleContent}
               </Link>
             ) : (
-              <div key={post.title}>
-                {articleContent}
-              </div>
+              <div key={post.title}>{articleContent}</div>
             );
           })}
         </section>

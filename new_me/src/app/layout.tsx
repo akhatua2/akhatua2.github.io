@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
-import {
-  Inter,
-  Space_Grotesk as SpaceGrotesk,
-  Fraunces,
-  Caveat,
-  Press_Start_2P,
-} from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
+import {
+  Caveat,
+  Fraunces,
+  Inter,
+  Press_Start_2P,
+  Space_Grotesk as SpaceGrotesk,
+} from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/Footer";
 
@@ -46,8 +46,7 @@ const pressStart2P = Press_Start_2P({
 
 export const metadata: Metadata = {
   title: "Arpan",
-  description:
-    "A personal blog-inspired space for ML, engineering, and thoughtful notes.",
+  description: "A personal blog-inspired space for ML, engineering, and thoughtful notes.",
   icons: {
     icon: "/mango.png",
     shortcut: "/mango.png",
@@ -65,6 +64,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${spaceGrotesk.variable} ${fraunces.variable} ${caveat.variable} ${pressStart2P.variable} antialiased bg-background text-foreground`}
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-accent focus:text-background focus:rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+        >
+          Skip to main content
+        </a>
         {children}
         <Footer />
         <Analytics />

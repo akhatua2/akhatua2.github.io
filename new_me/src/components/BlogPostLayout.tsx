@@ -1,8 +1,8 @@
 "use client";
 
-import Navigation from "@/components/Navigation";
 import Link from "next/link";
-import { useEffect, useState, ReactNode } from "react";
+import { type ReactNode, useEffect, useState } from "react";
+import Navigation from "@/components/Navigation";
 
 interface TocItem {
   id: string;
@@ -32,7 +32,7 @@ export default function BlogPostLayout({
 
   useEffect(() => {
     const headings = document.querySelectorAll("h2[id], h3[id]");
-    
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -46,10 +46,12 @@ export default function BlogPostLayout({
       }
     );
 
-    headings.forEach((heading) => observer.observe(heading));
+    for (const heading of headings) {
+      observer.observe(heading);
+    }
 
     return () => {
-      headings.forEach((heading) => observer.disconnect());
+      observer.disconnect();
     };
   }, []);
 
@@ -91,24 +93,34 @@ export default function BlogPostLayout({
         <aside className="hidden lg:block flex-shrink-0 w-64 pl-6">
           <nav className="border-2 border-foreground bg-background p-4 pb-6 shadow-[4px_4px_0px_0px_rgb(0,0,0)] sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
             {/* Back to Blog Button */}
-            <Link 
-              href="/blog" 
+            <Link
+              href="/blog"
               className="text-sm text-muted hover:text-foreground transition-colors inline-flex items-center gap-1 mb-4 block"
               style={{ fontFamily: "var(--font-space)" }}
             >
               <span>←</span>
               <span>Blog</span>
             </Link>
-            
-            <p className="text-xs uppercase tracking-widest text-muted mb-4 font-bold" style={{ fontFamily: "var(--font-space)" }}>
+
+            <p
+              className="text-xs uppercase tracking-widest text-muted mb-4 font-bold"
+              style={{ fontFamily: "var(--font-space)" }}
+            >
               Contents
             </p>
             <ul className="space-y-2 text-sm">
               {tocItems.map((item) => (
                 <li key={item.id}>
                   <button
+                    type="button"
                     onClick={() => scrollToHeading(item.id)}
-                    className={`text-left w-full transition-colors ${
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        scrollToHeading(item.id);
+                      }
+                    }}
+                    className={`text-left w-full transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 ${
                       item.level === 3 ? "pl-4" : ""
                     } ${
                       activeId === item.id
@@ -116,6 +128,7 @@ export default function BlogPostLayout({
                         : "text-muted hover:text-foreground"
                     }`}
                     style={{ fontFamily: "var(--font-space)" }}
+                    aria-current={activeId === item.id ? "location" : undefined}
                   >
                     {item.title}
                   </button>
@@ -140,11 +153,7 @@ export default function BlogPostLayout({
               <span>•</span>
               <span>{readingTime}</span>
             </div>
-            {summary && (
-              <p className="text-xl text-muted leading-relaxed">
-                {summary}
-              </p>
-            )}
+            {summary && <p className="text-xl text-muted leading-relaxed">{summary}</p>}
           </header>
 
           {/* Content */}
@@ -157,8 +166,15 @@ export default function BlogPostLayout({
       {/* Scroll to Top Button */}
       {showScrollTop && (
         <button
+          type="button"
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-foreground text-background border-2 border-foreground shadow-[4px_4px_0px_0px_rgb(0,0,0)] hover:shadow-[2px_2px_0px_0px_rgb(0,0,0)] transition-all flex items-center justify-center z-50"
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              scrollToTop();
+            }
+          }}
+          className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-foreground text-background border-2 border-foreground shadow-[4px_4px_0px_0px_rgb(0,0,0)] hover:shadow-[2px_2px_0px_0px_rgb(0,0,0)] transition-all flex items-center justify-center z-50 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
           aria-label="Scroll to top"
         >
           <svg
@@ -168,7 +184,9 @@ export default function BlogPostLayout({
             strokeWidth={2.5}
             stroke="currentColor"
             className="w-6 h-6"
+            aria-hidden="true"
           >
+            <title>Scroll to top arrow</title>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
           </svg>
         </button>
@@ -176,4 +194,3 @@ export default function BlogPostLayout({
     </main>
   );
 }
-

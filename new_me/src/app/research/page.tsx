@@ -1,5 +1,5 @@
-import Newspaper from "@/components/Newspaper";
 import Navigation from "@/components/Navigation";
+import Newspaper from "@/components/Newspaper";
 
 export const metadata = {
   title: "Research — Arpan Khatua",

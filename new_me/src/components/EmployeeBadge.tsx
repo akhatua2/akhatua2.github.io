@@ -60,23 +60,37 @@ export default function EmployeeBadge({
       style={{ boxShadow: `8px 8px 0px 0px ${colors.shadowColor}` }}
     >
       {/* Right accent border with black border - matches shadow position */}
-      <div className={`absolute ${colors.accent} border-2 border-foreground`} style={{ right: '-10px', top: '-2px', bottom: '-10px', width: '8px' }}></div>
+      <div
+        className={`absolute ${colors.accent} border-2 border-foreground`}
+        style={{ right: "-10px", top: "-2px", bottom: "-10px", width: "8px" }}
+      ></div>
       {/* Bottom accent border with black border - matches shadow position */}
-      <div className={`absolute ${colors.accent} border-2 border-foreground`} style={{ bottom: '-10px', left: '-2px', right: '-10px', height: '8px' }}></div>
-      
+      <div
+        className={`absolute ${colors.accent} border-2 border-foreground`}
+        style={{ bottom: "-10px", left: "-2px", right: "-10px", height: "8px" }}
+      ></div>
+
       {/* Badge Header - Company Logo Area */}
       <div className="bg-foreground text-background px-4 py-3 flex items-center justify-between relative">
         <div className="flex items-center gap-3">
-          <div className={`w-8 h-8 bg-background flex items-center justify-center border-2 ${colors.accentBorder} overflow-hidden`}>
+          <div
+            className={`w-8 h-8 bg-background flex items-center justify-center border-2 ${colors.accentBorder} overflow-hidden`}
+          >
             {company === "Meta" ? (
               <img src="/meta.png" alt="Meta" className="w-full h-full object-contain p-1" />
             ) : (
-              <img src="/stanford.png" alt="Stanford" className="w-full h-full object-contain p-1" />
+              <img
+                src="/stanford.png"
+                alt="Stanford"
+                className="w-full h-full object-contain p-1"
+              />
             )}
           </div>
           <div>
             <p className="text-xs font-bold uppercase tracking-wider">{company}</p>
-            <p className="text-[10px] opacity-90">{company === "Meta" ? "Employee ID Card" : "Research ID Card"}</p>
+            <p className="text-[10px] opacity-90">
+              {company === "Meta" ? "Employee ID Card" : "Research ID Card"}
+            </p>
           </div>
         </div>
         <div className="text-right">
@@ -121,11 +135,13 @@ export default function EmployeeBadge({
 
         {/* Access Level Badges */}
         <div className="border-t border-border pt-3 mb-3">
-          <p className="text-[9px] font-semibold uppercase tracking-wider text-muted mb-2">Access Level</p>
+          <p className="text-[9px] font-semibold uppercase tracking-wider text-muted mb-2">
+            Access Level
+          </p>
           <div className="flex flex-wrap gap-1.5">
-            {accessLevel.map((level, idx) => (
+            {accessLevel.map((level) => (
               <span
-                key={idx}
+                key={level}
                 className={`text-[8px] px-2 py-0.5 border ${colors.accentBorder} bg-background font-semibold uppercase`}
               >
                 {level}
@@ -136,10 +152,12 @@ export default function EmployeeBadge({
 
         {/* Achievements */}
         <div className="border-t border-border pt-3 mb-3">
-          <p className="text-[9px] font-semibold uppercase tracking-wider text-muted mb-2">Key Achievements</p>
+          <p className="text-[9px] font-semibold uppercase tracking-wider text-muted mb-2">
+            Key Achievements
+          </p>
           <ul className="space-y-1.5">
-            {achievements.map((achievement, idx) => (
-              <li key={idx} className="text-[10px] text-foreground flex items-start gap-2">
+            {achievements.map((achievement) => (
+              <li key={achievement} className="text-[10px] text-foreground flex items-start gap-2">
                 <span className="text-foreground mt-0.5">•</span>
                 <span>{achievement}</span>
               </li>
@@ -150,4 +168,3 @@ export default function EmployeeBadge({
     </motion.div>
   );
 }
-
