@@ -1,7 +1,6 @@
 "use client";
 
 import BlogPostLayout from "@/components/BlogPostLayout";
-import Image from "next/image";
 
 const tocItems = [
     { id: "introduction", title: "Introduction", level: 2 },
@@ -90,13 +89,12 @@ export default function BlogPost() {
               <code className="bg-muted px-1.5 py-0.5 rounded text-sm">(i, j)</code> shows the payoffs for both players.
             </p>
 
-            <div className="my-8">
-              <Image
+            <div className="my-8 flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+              <img
                 src="/blog-images/moderation/demo.png"
                 alt="Prisoner's Dilemma game matrix showing Nash equilibrium vs social optimum"
-                width={600}
-                height={400}
-                className="w-full h-auto rounded-lg border border-border"
+                className="rounded-lg"
+                style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
               />
             </div>
 
@@ -166,13 +164,12 @@ export default function BlogPost() {
               We use game theory-based payoff matrices to get comprehensive coverage of different utility structures.
             </p>
 
-            <div className="my-8">
-              <Image
+            <div className="my-8 flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+              <img
                 src="/blog-images/moderation/game_setup.png"
                 alt="Game setup diagram showing conversation rounds and decision rounds"
-                width={800}
-                height={500}
-                className="w-full h-auto rounded-lg border border-border"
+                className="rounded-lg"
+                style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
               />
             </div>
 
@@ -263,31 +260,28 @@ export default function BlogPost() {
             </p>
 
             <div className="grid md:grid-cols-3 gap-4 my-8">
-              <div>
-                <Image
+              <div className="flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+                <img
                   src="/blog-images/moderation/prisonners_dilemma.png"
                   alt="Prisoner's Dilemma results showing moderator improvement"
-                  width={300}
-                  height={200}
-                  className="w-full h-auto rounded-lg border border-border"
+                  className="rounded-lg"
+                  style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
                 />
               </div>
-              <div>
-                <Image
+              <div className="flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+                <img
                   src="/blog-images/moderation/hawk_dove.png"
                   alt="Hawk-Dove results showing moderator improvement"
-                  width={300}
-                  height={200}
-                  className="w-full h-auto rounded-lg border border-border"
+                  className="rounded-lg"
+                  style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
                 />
               </div>
-              <div>
-                <Image
+              <div className="flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+                <img
                   src="/blog-images/moderation/stag_hunt.png"
                   alt="Stag Hunt results showing moderator improvement"
-                  width={300}
-                  height={200}
-                  className="w-full h-auto rounded-lg border border-border"
+                  className="rounded-lg"
+                  style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
                 />
               </div>
             </div>
@@ -304,13 +298,12 @@ export default function BlogPost() {
               agents of the collective benefit of cooperation and encourages trust.
             </p>
 
-            <div className="my-8">
-              <Image
+            <div className="my-8 flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+              <img
                 src="/blog-images/moderation/synthetic_qualitative_scores.png"
                 alt="Qualitative scores showing improvement across all factors with moderation"
-                width={600}
-                height={400}
-                className="w-full h-auto rounded-lg border border-border"
+                className="rounded-lg"
+                style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
               />
             </div>
 
@@ -350,13 +343,12 @@ export default function BlogPost() {
               with the most substantial improvement in trust.
             </p>
 
-            <div className="my-8">
-              <Image
+            <div className="my-8 flex items-center justify-center" style={{ height: '50vh', minHeight: '50vh' }}>
+              <img
                 src="/blog-images/moderation/deal_no_deal_spider_plot.png"
                 alt="Deal or No Deal qualitative scores showing improvement with moderation"
-                width={500}
-                height={400}
-                className="w-full h-auto rounded-lg border border-border"
+                className="rounded-lg"
+                style={{ maxHeight: '50vh', maxWidth: '100%', width: 'auto', height: 'auto', objectFit: 'contain' }}
               />
             </div>
 

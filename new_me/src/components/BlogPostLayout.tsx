@@ -148,7 +148,7 @@ export default function BlogPostLayout({
           </header>
 
           {/* Content */}
-          <div className="prose prose-lg max-w-none">
+          <div className="prose prose-lg max-w-none [&_img]:max-h-[50vh] [&_img]:w-auto [&_img]:object-contain">
             {children}
           </div>
         </article>

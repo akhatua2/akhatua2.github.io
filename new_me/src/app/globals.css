@@ -196,3 +196,34 @@ body::before {
     0px 0px 0px 0px var(--foreground),
     inset 3px 3px 0px 0px rgba(0, 0, 0, 0.2);
 }
+
+/* Shimmer animation for GitHub contributions loading */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(243, 244, 246, 0) 0%,
+    rgba(243, 244, 246, 0.3) 50%,
+    rgba(243, 244, 246, 0) 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(17, 24, 39, 0) 0%,
+    rgba(17, 24, 39, 0.3) 50%,
+    rgba(17, 24, 39, 0) 100%
+  );
+  background-size: 1000px 100%;
+}

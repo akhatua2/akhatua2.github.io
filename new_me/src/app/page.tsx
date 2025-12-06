@@ -98,6 +98,17 @@ export default function Home() {
                       LinkedIn
                     </a>
                     <a
+                      href="https://scholar.google.com/citations?user=hOo4TBcAAAAJ&hl=en"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="pixel-button"
+                    >
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style={{ imageRendering: 'pixelated' }}>
+                        <path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                      </svg>
+                      Scholar
+                    </a>
+                    <a
                       href="mailto:arpan@stanford.edu"
                       className="pixel-button"
                     >

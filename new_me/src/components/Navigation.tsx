@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import SearchBar from "@/components/SearchBar";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,12 +65,20 @@ export default function Navigation() {
             Experience
           </Link>
           <Link
+            href="/projects"
+            className="link-underline hover:text-foreground whitespace-nowrap"
+            style={{ fontFamily: "var(--font-space)" }}
+          >
+            Projects
+          </Link>
+          <Link
             href="/blog"
             className="link-underline hover:text-foreground whitespace-nowrap"
             style={{ fontFamily: "var(--font-space)" }}
           >
             Blog
           </Link>
+          <SearchBar />
         </div>
       </div>
     </nav>
