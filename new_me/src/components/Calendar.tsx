@@ -118,7 +118,7 @@ export default function Calendar() {
         <div className="border-b-2 border-foreground px-4 py-3 bg-foreground text-background">
           <h3
             className="text-sm sm:text-base font-bold text-center"
-            style={{ fontFamily: "var(--font-caveat), cursive" }}
+            style={{ fontFamily: "var(--font-snowy), cursive" }}
           >
             {monthNames[monthIndex]}
           </h3>
@@ -157,7 +157,7 @@ export default function Calendar() {
                 </div>
                 <h4
                   className="text-sm sm:text-base font-bold text-foreground"
-                  style={{ fontFamily: "var(--font-caveat), cursive" }}
+                  style={{ fontFamily: "var(--font-snowy), cursive" }}
                 >
                   {event.link ? (
                     <a
@@ -174,7 +174,7 @@ export default function Calendar() {
                 </h4>
                 <p 
                   className="text-xs sm:text-sm text-foreground/80 leading-relaxed"
-                  style={{ fontFamily: "var(--font-caveat), cursive" }}
+                  style={{ fontFamily: "var(--font-snowy), cursive" }}
                 >
                   {event.description}
                 </p>
@@ -209,7 +209,7 @@ export default function Calendar() {
             </button>
             <h2
             className="text-2xl sm:text-3xl font-bold text-foreground text-center flex-1"
-            style={{ fontFamily: "var(--font-caveat), cursive" }}
+            style={{ fontFamily: "var(--font-snowy), cursive" }}
             >
               {currentYear}
             </h2>

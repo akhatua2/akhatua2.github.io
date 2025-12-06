@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Calendar from "@/components/Calendar";
@@ -22,40 +22,45 @@ export default function Home() {
     <main>
       <Navigation />
 
-      {/* Hero Section */}
-      <div
-        className="flex flex-col justify-center relative"
-        style={{ minHeight: windowHeight }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.2 }}
       >
-        <div className="max-w-[65rem] mx-auto w-full px-4 sm:px-6 space-y-8 sm:space-y-12">
-          <div className="grid md:grid-cols-[3fr_2fr] gap-6 sm:gap-10 lg:gap-12 items-center">
-            {/* Left side - Name and Bio */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="flex flex-col justify-center"
-            >
-              <div className="space-y-4 sm:space-y-6">
-                <div className="space-y-3 sm:space-y-4">
-                  <h1
-                    className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground"
-                    style={{ fontFamily: "var(--font-space)" }}
-                  >
-                    Hi I&apos;m Arpan
-                  </h1>
-                  <div className="text-sm sm:text-base text-foreground leading-relaxed space-y-3 sm:space-y-4">
-                    <p>
-                      I broadly work on problems related to language agents, model evaluation, and making LLMs play nice with humans and each other. I&apos;m a MSCS student at Stanford <span className="text-xl inline-block">🌲</span>, where I&apos;m blessed with amazing advisors <a href="https://cs.stanford.edu/~diyiy/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Diyi Yang</a>, <a href="https://cs.stanford.edu/people/jure/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Jure Leskovec</a>, and <a href="https://suif.stanford.edu/~lam/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Monica Lam</a>.
-                    </p>
-                    <div className="my-4 sm:my-8"></div>
-                    <p>
-                      Before that I was at <img src="/meta.png" alt="Meta" className="h-3 inline mx-1 object-contain" /> where I helped people around the world connect on Facebook groups. I built systems to keep groups safe and friendly and LLM agents to answer people&apos;s questions. I completed my BS in Computer Engineering from UIUC <span className="text-xl inline-block">🌽</span>, where I worked on large-scale graph systems with the amazing <a href="https://msharmavikram.github.io/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Vikram Sharma Mailthody</a> and <a href="https://research.nvidia.com/person/wen-mei-hwu" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Wen-Mei Hwu</a>.
-                    </p>
-                  </div>
-                  
-                  {/* Pixelated Links */}
-                  <div className="flex flex-wrap gap-3 mt-6">
+        {/* Hero Section */}
+        <div
+          className="flex flex-col justify-center relative"
+          style={{ minHeight: windowHeight }}
+        >
+          <div className="max-w-[65rem] mx-auto w-full px-4 sm:px-6 space-y-8 sm:space-y-12">
+            <div className="grid md:grid-cols-[3fr_2fr] gap-6 sm:gap-10 lg:gap-12 items-center">
+              {/* Left side - Name and Bio */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="flex flex-col justify-center"
+              >
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="space-y-3 sm:space-y-4">
+                    <h1
+                      className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground"
+                      style={{ fontFamily: "var(--font-space)" }}
+                    >
+                      Hi I&apos;m Arpan
+                    </h1>
+                    <div className="text-sm sm:text-base text-foreground leading-relaxed space-y-3 sm:space-y-4">
+                      <p>
+                        I broadly work on problems related to language agents, model evaluation, and making LLMs play nice with humans and each other. I&apos;m a MSCS student at Stanford <span className="text-xl inline-block">🌲</span>, where I&apos;m blessed with amazing advisors <a href="https://cs.stanford.edu/~diyiy/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Diyi Yang</a>, <a href="https://cs.stanford.edu/people/jure/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Jure Leskovec</a>, and <a href="https://suif.stanford.edu/~lam/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Monica Lam</a>.
+                      </p>
+                      <div className="my-4 sm:my-8"></div>
+                      <p>
+                        Before that I was at <img src="/meta.png" alt="Meta" className="h-3 inline mx-1 object-contain" /> where I helped people around the world connect on Facebook groups. I built systems to keep groups safe and friendly and LLM agents to answer people&apos;s questions. I completed my BS in Computer Engineering from UIUC <span className="text-xl inline-block">🌽</span>, where I worked on large-scale graph systems with the amazing <a href="https://msharmavikram.github.io/" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Vikram Sharma Mailthody</a> and <a href="https://research.nvidia.com/person/wen-mei-hwu" target="_blank" rel="noopener noreferrer" className="text-accent no-underline">Prof. Wen-Mei Hwu</a>.
+                      </p>
+                    </div>
+                    
+                    {/* Pixelated Links */}
+                    <div className="flex flex-wrap gap-3 mt-6">
                     <a
                       href="/resume.pdf"
                       target="_blank"
@@ -117,20 +122,19 @@ export default function Home() {
                       </svg>
                       Email
                     </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
 
-            {/* Right side - Profile Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-full flex justify-center md:justify-end"
-            >
-              <div className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80">
-                <AnimatePresence>
+              {/* Right side - Profile Image */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full flex justify-center md:justify-end"
+              >
+                <div className="relative h-48 w-48 sm:h-64 sm:w-64 md:h-80 md:w-80">
                   <motion.img
                     key={showRealImage ? "real" : "transparent"}
                     src={showRealImage ? "/me_real.png" : "/me-transparent.png"}
@@ -142,15 +146,15 @@ export default function Home() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
                   />
-                </AnimatePresence>
-              </div>
-            </motion.div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Calendar Section */}
-      <Calendar />
+        {/* Calendar Section */}
+        <Calendar />
+      </motion.div>
     </main>
   );
 }

@@ -1,11 +1,20 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Snowy Delight";
+  src: url("/Snowy Delight.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #111827;
   --muted: #6b7280;
   --border: #e5e7eb;
   --accent: #0f4fa3;
+  --font-snowy: "Snowy Delight", cursive;
 }
 
 @theme inline {
@@ -226,4 +235,19 @@ body::before {
     rgba(17, 24, 39, 0) 100%
   );
   background-size: 1000px 100%;
+}
+
+/* Pixelated text for Pacman game */
+.pixel-text {
+  font-family: var(--font-pixel), 'Courier New', 'Courier', monospace;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+  text-rendering: optimizeSpeed;
+}
+
+/* Pixelated canvas for Pacman game */
+.pixel-canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }

@@ -284,7 +284,7 @@ export default function GitHubContributions({
                     if (day.date && dateToIndexMap.has(day.date)) {
                       // Use the date index for actual dates (Jan 1 = 0, Dec 31 = 364)
                       globalIndex = dateToIndexMap.get(day.date) || 0;
-                      delay = globalIndex * 10; // 10ms per day for more visible sequential animation
+                      delay = globalIndex * 2; // 10ms per day for more visible sequential animation
                     } else if (isEmpty) {
                       // Empty days at start/end - calculate based on their position
                       // Empty days before Jan 1 come first (negative or early index)
