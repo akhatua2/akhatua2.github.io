@@ -1,8 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect } from "react";
 
 export default function Newspaper() {
+  // Easter egg: Morse code message in console
+  useEffect(() => {
+    console.log(
+      `%c
+ ███████╗ █████╗ ███████╗████████╗███████╗██████╗      ███████╗ ██████╗  ██████╗ 
+██╔════╝██╔══██╗██╔════╝╚══██╔══╝██╔════╝██╔══██╗     ██╔════╝██╔═══██╗██╔════╝ 
+█████╗  ███████║███████╗   ██║   █████╗  ██████╔╝     █████╗  ██║   ██║██║  ███╗
+██╔══╝  ██╔══██║╚════██║   ██║   ██╔══╝  ██╔══██╗     ██╔══╝  ██║   ██║██║   ██║
+███████╗██║  ██║███████║   ██║   ███████╗██║  ██║     ███████╗╚██████╔╝╚██████╔╝
+╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝     ╚══════╝ ╚═════╝  ╚═════╝ 
+                                                                                 v1.0.0
+`,
+      "color: #0f4fa3; font-family: monospace; font-size: 10px; line-height: 1.2; white-space: pre;"
+    );
+    console.log("You've found a hidden message.");
+    console.log("Somewhere on this page, encoded in morse code, lies a secret.");
+    console.log("Look for the classified ad in the newspaper section. Within its text, you'll find dots (·) and dashes (—) that form a message. Decode it to discover what awaits...");
+  }, []);
   const newsItems = [
     {
       date: "Nov 2025",
@@ -359,6 +378,10 @@ export default function Newspaper() {
                           <p className="text-[8px] sm:text-[9px] leading-tight text-foreground mb-1.5">Seeking: A100s, H100s, or any GPU that doesn't crash during training. Willing to negotiate: firstborn child, coffee supply, or eternal gratitude.</p>
                           <p className="text-[8px] sm:text-[9px] leading-tight text-foreground mb-1.5">Current situation: Running experiments on a potato. Results may vary. Desperation level: Critical.</p>
                           <p className="text-[8px] sm:text-[9px] leading-tight text-foreground mb-2">References available upon request. Previous GPU owners: please don't ask.</p>
+                          {/* Morse code: CLICK GPU AD = -·-· ·-·· ·· -·-· -·- / --· ·--· ··- / ·- -·· */}
+                          <p className="text-[7px] sm:text-[8px] leading-tight text-foreground/60 mb-1 font-mono border-t border-foreground/20 pt-1.5 mt-1.5">
+                            <span className="opacity-70">—</span>·<span className="opacity-70">—</span>· <span className="opacity-70">·</span>—·· ·· <span className="opacity-70">—</span>·<span className="opacity-70">—</span>· <span className="opacity-70">—</span>·<span className="opacity-70">—</span> / <span className="opacity-70">—</span><span className="opacity-70">—</span>· ·<span className="opacity-70">—</span><span className="opacity-70">—</span>· ··<span className="opacity-70">—</span> / ·<span className="opacity-70">—</span> <span className="opacity-70">—</span>··
+                          </p>
                           <a
                             href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                             target="_blank"
@@ -403,6 +426,10 @@ export default function Newspaper() {
                         <p className="text-[8px] sm:text-[9px] leading-tight text-foreground mb-1.5">Seeking: A100s, H100s, or any GPU that doesn't crash during training. Willing to negotiate: firstborn child, coffee supply, or eternal gratitude.</p>
                         <p className="text-[8px] sm:text-[9px] leading-tight text-foreground mb-1.5">Current situation: Running experiments on a potato. Results may vary. Desperation level: Critical.</p>
                         <p className="text-[8px] sm:text-[9px] leading-tight text-foreground mb-2">References available upon request. Previous GPU owners: please don't ask.</p>
+                        {/* Morse code: CLICK GPU AD = -·-· ·-·· ·· -·-· -·- / --· ·--· ··- / ·- -·· */}
+                        <p className="text-[7px] sm:text-[8px] leading-tight text-foreground/60 mb-1 font-mono border-t border-foreground/20 pt-1.5 mt-1.5">
+                          <span className="opacity-70">—</span>·<span className="opacity-70">—</span>· <span className="opacity-70">·</span>—·· ·· <span className="opacity-70">—</span>·<span className="opacity-70">—</span>· <span className="opacity-70">—</span>·<span className="opacity-70">—</span> / <span className="opacity-70">—</span><span className="opacity-70">—</span>· ·<span className="opacity-70">—</span><span className="opacity-70">—</span>· ··<span className="opacity-70">—</span> / ·<span className="opacity-70">—</span> <span className="opacity-70">—</span>··
+                        </p>
                         <a
                           href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                           target="_blank"
