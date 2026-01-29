@@ -124,11 +124,11 @@ export default function Home() {
                     {/* Pixelated Links */}
                     <div className="flex flex-wrap gap-3 mt-6">
                       <a
-                        href="/resume.pdf"
+                        href="/Arpandeep_Khatua_CV.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="pixel-button"
-                        aria-label="Download CV"
+                        aria-label="View CV"
                       >
                         CV
                       </a>
