@@ -113,18 +113,32 @@ export default function Newspaper() {
       image: "/cotomata.jpeg",
     },
     {
-      date: "In Progress",
+      date: "Feb 2026",
       dateSort: "2026-02",
-      headline: "Hierarchical RL User Simulation Improves Alignment by 36%",
+      headline: "HumanLM Simulates Users via State Alignment",
       content:
-        "HumanLM introduces hierarchical RL modules for user simulation, with initial results showing improved alignment with real user responses. The system raises LLM-judge similarity by 36% over SFT baselines through multi-level generation training and carefully designed stance and style reward functions.",
+        "HumanLM builds user simulators by generating natural-language latent states aligned with ground-truth responses, then synthesizing responses from those aligned states.",
       authors:
-        "Khatua, A.*, Wu, S.*, Choi, E.*, Wang, H., He-Yueva, J., Weerasooriya, C., Wei, W., Yang, D., Leskovec, J., & Zou, J.*",
-      paperTitle: "HumanLM: Building Digital Humans from Large Language Models",
-      venue: "In Progress (Targeting ICML 2026)",
-      link: "#",
-      codeLink: "#",
-      category: "Work in Progress",
+        "Wu, S., Choi, E., Khatua, A., Wang, Z., He-Yueya, J., Weerasooriya, T. C., Wei, W., Yang, D., Leskovec, J., & Zou, J.",
+      paperTitle: "HumanLM: Simulating Users with State Alignment Beats Response Imitation",
+      venue: "Preprint (2026)",
+      link: "https://humanlm.stanford.edu/HumanLM_paper.pdf",
+      codeLink: "https://github.com/zou-group/humanlm",
+      category: "Research",
+    },
+    {
+      date: "Jan 2026",
+      dateSort: "2026-01",
+      headline: "CooperBench Benchmarks Why Coding Agents Aren’t Teammates Yet",
+      content:
+        "CooperBench introduces a benchmark of cooperative coding tasks in real open-source repositories to quantify the curse of coordination in multi-agent coding.",
+      authors:
+        "Khatua, A., Zhu, H., Tran, P., Prabhudesai, A., Sadrieh, F., Lieberwirth, J. K., Yu, X., Fu, Y., Ryan, M. J., Pei, J., & Yang, D.",
+      paperTitle: "CooperBench: Why Coding Agents Cannot be Your Teammates Yet",
+      venue: "arXiv (2026)",
+      link: "https://arxiv.org/abs/2601.13295",
+      codeLink: "https://github.com/cooperbench/CooperBench",
+      category: "Research",
     },
     {
       date: "In Progress",

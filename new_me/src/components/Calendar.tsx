@@ -8,14 +8,14 @@ interface CalendarEvent {
   dateSort: string;
   title: string;
   description: string;
-  category: "Teaching" | "Conference" | "Mentoring" | "Talk" | "Travel" | "Project";
+  category: "Teaching" | "Conference" | "Mentoring" | "Talk" | "Travel" | "Project" | "Research";
   location?: string;
   link?: string;
   day?: number; // Specific day of month if available
 }
 
 export default function Calendar() {
-  const [currentYear, setCurrentYear] = useState(2025);
+  const [currentYear, setCurrentYear] = useState(2026);
 
   const events: CalendarEvent[] = [
     {
@@ -24,8 +24,38 @@ export default function Calendar() {
       title: "Teaching CS224V",
       description: "Teaching CS224V this quarter.",
       category: "Teaching",
-      location: "Stanford University",
+      location: "Stanford",
       day: 1, // Start of fall quarter
+    },
+    {
+      date: "Jan 2026",
+      dateSort: "2026-01",
+      title: "CooperBench Preprint",
+      description: "Released CooperBench preprint on cooperative coding agents.",
+      category: "Research",
+      location: "Stanford & SAP Labs",
+      link: "https://cooperbench.com/index.html",
+      day: 19,
+    },
+    {
+      date: "Feb 2026",
+      dateSort: "2026-02",
+      title: "HumanLM Preprint",
+      description: "Released HumanLM preprint on state-aligned user simulation.",
+      category: "Research",
+      location: "Stanford",
+      link: "https://humanlm.stanford.edu/",
+      day: 13,
+    },
+    {
+      date: "Winter 2026",
+      dateSort: "2026-01",
+      title: "CA for CS224N",
+      description: "Course assistant for CS224N this quarter.",
+      category: "Teaching",
+      location: "Stanford",
+      link: "https://cs224n.stanford.edu/",
+      day: 6,
     },
     {
       date: "Nov 2025",
@@ -74,6 +104,7 @@ export default function Calendar() {
       Talk: "bg-orange-100 text-orange-800",
       Travel: "bg-pink-100 text-pink-800",
       Project: "bg-indigo-100 text-indigo-800",
+      Research: "bg-emerald-100 text-emerald-800",
     };
     return colors[category] || "bg-gray-100 text-gray-800";
   };
@@ -250,16 +281,16 @@ export default function Calendar() {
               Event Categories
             </h3>
             <div className="flex flex-wrap gap-2">
-              {(["Teaching", "Conference", "Mentoring", "Talk", "Travel", "Project"] as const).map(
-                (category) => (
-                  <div
-                    key={category}
-                    className={`text-xs px-2 py-1 rounded ${getCategoryColor(category)}`}
-                  >
-                    {category}
-                  </div>
-                )
-              )}
+              {(
+                ["Teaching", "Conference", "Mentoring", "Talk", "Travel", "Project", "Research"] as const
+              ).map((category) => (
+                <div
+                  key={category}
+                  className={`text-xs px-2 py-1 rounded ${getCategoryColor(category)}`}
+                >
+                  {category}
+                </div>
+              ))}
             </div>
           </div>
         </div>
