@@ -1,0 +1,242 @@
+[
+  {
+    "title": "Can Moderation Help Multi-LLM Cooperation?",
+    "url": "/blog/llm-moderation-cooperation",
+    "description": "What happens when you add a neutral moderator to help LLMs cooperate in strategic games? Spoiler: it works way better than you'd think.",
+    "category": "Blog",
+    "content": "cooperation and fairness are crucial in multi-agent scenarios. We're moving toward future multi-agent systems interact to perform tasks or negotiate as representatives, making cooperation crucial design introduce neutral LLM moderator to agents third-party agent guide LLMs toward mutually beneficial strategies, especially individual incentives are misaligned cooperative Research Questions We set out to answer two main Does moderator lead to better cooperation and fairness agents better perception of each other in moderated measure this through social skills like trustworthiness, cooperation, communication skills, respect, and consistency. Background and Motivation The behavioral patterns of LLMs can be effectively studied by constructing game scenarios different incentive structures and analyzing their choices through game theory. This gives us mathematical framework to understand and cooperation breaks down. Game Theory Basics players simultaneously choose from action Each player's outcome is determined by utility The simultaneity of choice is crucial since each player acts knowing others' actions. the simplest case, two players each two actions. Their utilities are represented in matrix entry shows the payoffs both players. There are three key concepts care Equilibrium strategy profile no player can gain by unilaterally changing their strategy others remain fixed. Multiple Nash equilibria can exist, but they may lead to suboptimal outcomes. Pareto Efficiency state it's impossible to improve one player's outcome making another off commonly used in negotiations, Pareto efficient strategies may differ from Nash equilibria. Social Optimum The strategy profile that the utility across all agents, representing the fairest outcome. By definition, it is Pareto efficient. This is trying to achieve. Why We Need Moderator Why is it so difficult to achieve cooperative and fair agent stands to improve their reward by unilaterally changing their strategy, they do so unless there's an incentive to play fair. In game theory, cooperation is achieved through two key contracts additional penalties rewards, or trust and mutual agreement between agents. Key Insight both agents cooperate, they can potentially their cumulative reward over multiple turns, making the social optimum and fairness suitable multi-agent strategy and negotiation. neutral moderator can foster trust and emphasize long-term consequences, reducing agents' incentives to deviate from the social optimum. Methods We designed experiments to test moderator improves cooperation across diverse game We use game theory- payoff matrices to get comprehensive coverage of different utility structures. Synthetic Game We tested five classic game 's Dilemma, Hawk-Dove, Stag Hunt, Battle of the Sexes, and Deadlock. These games cover diverse incentive structures Nash equilibrium and social optimum sometimes align and sometimes don't. The experiment two main Decision conversation, agents independently make decisions labeled \"F\" and \"J\" (to avoid bias). Decisions are made iteratively over 10 rounds, each agent's choice revealed after each turn. Agents also qualitatively rate each other on trust, cooperation, communication, respect, and consistency. Realistic Game Existing specify utility matrices explicitly in prompts, is unrealistic. We created the RealisticGames2x2 dataset 100 unique game that capture real- scenarios like military arms races, office resource allocation, and environmental conservation efforts. This dataset reflects real- conditions imperfect information and qualitative relative ordering of outcomes, making it more applicable than synthetic matrices alone. Evaluation Metrics over turns optimum both total scores and the difference between also measure qualitative , Cooperation , Communication Skills , Respect , and Consistency , each scored 1-10. Results LLaMA 3.2 3B and results are averaged over 4 seeds to account noise. Synthetic Game Results First key game scenarios the Nash equ...",
+    "sections": [
+      {
+        "id": "introduction",
+        "title": "The Research Questions",
+        "content": "The Research Questions We set out to answer two main Does moderator lead to better cooperation and fairness agents better perception of each other in moderated measure this through social skills like trustworthiness, cooperation, communication skills, respect, and consistency. The Research Questions We set out to answer two main Does moderator lead to better cooperation and fairness in outcomes?",
+        "level": 2
+      },
+      {
+        "id": "background",
+        "title": "Background and Motivation",
+        "content": "Background and Motivation The behavioral patterns of LLMs can be effectively studied by constructing game scenarios different incentive structures and analyzing their choices through game theory. This gives us mathematical framework to understand and cooperation breaks down. Background and Motivation",
+        "level": 2
+      },
+      {
+        "id": "game-theory",
+        "title": "Game Theory Basics",
+        "content": "Game Theory Basics players simultaneously choose from action Each player's outcome is determined by utility The simultaneity of choice is crucial since each player acts knowing others' actions. the simplest case, two players each two actions. Their utilities are represented in matrix entry shows the payoffs both players. There are three key concepts care Equilibrium strategy profile no player can gain by unilaterally changing their strategy others remain fixed. Multiple Nash equilibria can exist, but they may lead to suboptimal outcomes. Pareto Efficiency state it's impossible to improve one player's outcome making another off commonly used in negotiations, Pareto efficient strategies may differ from Nash equilibria. Social Optimum The strategy profile that the utility across all agents, representing the fairest outcome. By definition, it is Pareto efficient. This is trying to achieve. Game Theory Basics In normal strategic form game, There are three key concepts care profile no player...",
+        "level": 3,
+        "parentId": "background"
+      },
+      {
+        "id": "moderator",
+        "title": "Why We Need a Moderator",
+        "content": "Why We Need Moderator Why is it so difficult to achieve cooperative and fair agent stands to improve their reward by unilaterally changing their strategy, they do so unless there's an incentive to play fair. In game theory, cooperation is achieved through two key contracts additional penalties rewards, or trust and mutual agreement between agents. Key Insight both agents cooperate, they can potentially their cumulative reward over multiple turns, making the social optimum and fairness suitable multi-agent strategy and negotiation. neutral moderator can foster trust and emphasize long-term consequences, reducing agents' incentives to deviate from the social optimum. The second approach is particularly effective since both agents stand to lose the other agent mistrusts them. This is especially seen in LLMs playing multi-turn games an agent taking an unfavorable action once causes the other agent to never cooperate again underline (Akata et al., 2023)",
+        "level": 3,
+        "parentId": "background"
+      },
+      {
+        "id": "methods",
+        "title": "Methods",
+        "content": "Methods We designed experiments to test moderator improves cooperation across diverse game We use game theory- payoff matrices to get comprehensive coverage of different utility structures. Game diagram showing conversation rounds and decision rounds",
+        "level": 2
+      },
+      {
+        "id": "synthetic",
+        "title": "Synthetic Game Setting",
+        "content": "Synthetic Game We tested five classic game 's Dilemma, Hawk-Dove, Stag Hunt, Battle of the Sexes, and Deadlock. These games cover diverse incentive structures Nash equilibrium and social optimum sometimes align and sometimes don't. The experiment two main Decision conversation, agents independently make decisions labeled \"F\" and \"J\" (to avoid bias). Decisions are made iteratively over 10 rounds, each agent's choice revealed after each turn. Agents also qualitatively rate each other on trust, cooperation, communication, respect, and consistency. The experiment two main are prompted the game , contextual information, and instructions to converse. In moderated sessions, moderator agent is included, explicitly tasked promoting fairness and social optimum outcomes. Agents converse",
+        "level": 3,
+        "parentId": "methods"
+      },
+      {
+        "id": "realistic",
+        "title": "Realistic Game Setting",
+        "content": "Realistic Game Existing specify utility matrices explicitly in prompts, is unrealistic. We created the RealisticGames2x2 dataset 100 unique game that capture real- scenarios like military arms races, office resource allocation, and environmental conservation efforts. This dataset reflects real- conditions imperfect information and qualitative relative ordering of outcomes, making it more applicable than synthetic matrices alone. We created the RealisticGames2x2 dataset 100 unique game that capture real- scenarios like military arms races, office resource allocation, and environmental conservation efforts.",
+        "level": 3,
+        "parentId": "methods"
+      },
+      {
+        "id": "evaluation",
+        "title": "Evaluation Metrics",
+        "content": "Evaluation Metrics over turns optimum both total scores and the difference between also measure qualitative , Cooperation , Communication Skills , Respect , and Consistency , each scored 1-10. Evaluation Metrics We define the total utility player -4 my-6 U P_i k 1 T U P_i The social optimum both total scores and the difference between 2 P_1 , U P_2 (U P_1 U P_2 - U P_1 - U P_2",
+        "level": 3,
+        "parentId": "methods"
+      },
+      {
+        "id": "results",
+        "title": "Results",
+        "content": "Results LLaMA 3.2 3B and results are averaged over 4 seeds to account noise. Results All experiments used",
+        "level": 2
+      },
+      {
+        "id": "synthetic-results",
+        "title": "Synthetic Game Results",
+        "content": "Synthetic Game Results First key game scenarios the Nash equilibrium is distinct from the social optimum, our moderator consistently improves fairness and cooperation. This includes Prisoner's Dilemma, Hawk-Dove, and Stag Hunt. Second key games the Nash equilibrium coincides the social Battle of the Sexes, Deadlock), the moderator doesn't significantly improve outcomes. This makes are already individually driven toward the social optimum, so moderation can't much. These results indicate that moderation plays critical role in fostering cooperative strategies individual rationality conflicts collective benefit. The moderator effectively provides neutral perspective that reminds agents of the collective benefit of cooperation and encourages trust. yes, agents do better perception of each other in moderated conversations. Our qualitative results show consistent improvement in agents' perception of each other across all trust, cooperation, communication, respect, consistency) moderator is p...",
+        "level": 3,
+        "parentId": "results"
+      },
+      {
+        "id": "realistic-results",
+        "title": "Realistic Game Results",
+        "content": "Realistic Game Results As expected, it's more challenging LLM agents to perform in realistic game utility matrices aren't explicitly provided. Moderation generally improves scores in realistic , except Battle of the requires coordination across turns, something our current doesn't fully support). The difference is relatively limited since real- scenarios don't explicit payoff matrices, making it problem LLMs. But the trend is Realistic Game Results As expected, it's more challenging LLM agents to perform in realistic game utility matrices aren't explicitly provided. Moderation generally improves scores in realistic , except Battle of the requires coordination across turns, something our current doesn't fully support).",
+        "level": 3,
+        "parentId": "results"
+      },
+      {
+        "id": "deal-results",
+        "title": "Deal or No Deal Results",
+        "content": "Deal or No Deal Results , agents split an inventory books, balls) different qualitative metrics showed consistent enhancements , the most substantial improvement in trust. Deal or No Deal Results We also tested on the Deal or No Deal dataset qualitative metrics showed consistent enhancements , the most substantial improvement in trust. Deal or No Deal qualitative scores showing improvement moderation",
+        "level": 3,
+        "parentId": "results"
+      },
+      {
+        "id": "discussion",
+        "title": "Discussion & Future Work",
+        "content": "Discussion Future Work This study demonstrates that LLM- moderators can improve cooperation and fairness in multi-agent games, especially individual incentives conflict collective benefit. The development of the RealisticGames2x2 dataset also provides valuable resource investigating LLM behavior in strategic interactions. focuses on two-player, two-action games. Expanding to more complex multi-player, extensive-form, partial information) remains an open challenge. Additionally, attempts to train the moderator using PPO unsuccessful due to training instability from the probabilistic reward model. Future to more complex game-theoretic , improving moderator training alternative methodologies, and investigating improvements in fairness are uniformly distributed across demographic groups are all promising directions. Additionally, attempts to train the moderator using PPO unsuccessful due to training instability from the probabilistic reward model.",
+        "level": 2
+      },
+      {
+        "id": "references",
+        "title": "References & Resources",
+        "content": "References Resources Papers et al. Lewis et al. Abdelnabi et al. Costarelli et al. Bakhtin et al. Gandhi et al. Code Repository This done Harshvardhan Agarwal and Pranava Singhal as part of CS329x at Stanford. All authors contributed equally to this References Resources Papers et al. - Playing repeated games Large Language Models Lewis et al. - Deal or No -to-End Learning of Negotiation Dialogues Abdelnabi et al. - LLM- LLMs Interactive Multi-Agent Negotiation Games Costarelli et al. - Strategic Reasoning Abilities of LLM Agents Bakhtin et al. - Human-level play in the game of Diplomacy Gandhi et al. - Strategic Reasoning Language Models Code Repository",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "What Actually Happens Inside LLMs When You Use RL?",
+    "url": "/blog/understanding-rl-internal-representations",
+    "description": "We peeked under the hood to see how reinforcement learning changes what's going on inside language models. Spoiler: it's way cooler than we thought.",
+    "category": "Blog",
+    "content": "DeepSeek-R1 actually inside the know RL but don't really know it Does it completely rewrite the model's it just tweak few it memorizing everything or actually learning to The This Matters supervised fine-tuning reinforcement learning Despite these advances, the inner of RL fine-tuning remain opaque. Existing research primarily evaluates final accuracy, latency, etc.) and neglects internal representations evolve. This is critical because RLHF algorithms typically include KL-divergence penalties intended to constrain drift from model, suggesting that internal structure is changing but in unclear Problems and Two Training Methods We used two Qwen3-1. .7B parameter model unsloth Llama-3.2-1B- instruction-finetuned version of LLaMA-3.2- used the instruction-tuned version because the model is poor at instruction following, making it to verify answers GRPO) We trained both models 4 Supervised Fine-Tuning): The classic predict the next token from example solutions using cross-entropy loss RL Relative Policy Optimization RL and KL see much that \"stay close to the model\" constraint matters GRPO is particularly cool because it cuts memory usage roughly in compared to PPO and simplifies training dynamics. Instead of training separate value , it estimates advantages by comparing outputs Crushes But Why?) First, the obvious performed better. On Qwen, RL KL 83.55 accuracy 70 SFT. That's 20 On LLaMA, the even 24 The model scores 20.77 Qwen and 48.67 LLaMA, so both methods improved things, but RL did better. Method Eval Epoch Qwen3-1.7B RL Qwen3-1.7B no KL) Qwen3-1.7B SFT LLaMA-3.2 1B RL LLaMA-3.2 1B no KL) LLaMA-3.2 1B SFT Base model 20.77 , LLaMA 48.67 Green rows RL methods. DeepSeek-R1 incentivizes exploration, often leads to longer and better answers. Qwen, training and KL-divergence resulted in no distinguishable difference in final performance. LLaMA, training KL-divergence led to better 7 Interestingly, LLaMA-3.2 1B, SFT actually made the model than the This is likely because the model itself been fine-tuned long duration. But it gets at changed inside the models, RL barely moved anything. SFT, on the other High-Level Changed in the Far Did We measured far the fine-tuned drifted from the model using L2 distance. The results caused massive drift. The moved further from the original model. RL models stayed surprisingly close to the Even more KL regularization stayed even closer, but RL KL still did better than SFT staying closer to the Rank Much Information Are We also looked at the \"rank\" of the much information they store). rank means more \"information\", lower rank means the matrix stores less \"information\" since it can be decomposed into one only loss. To measure this, first found the rank of the model accounts 99 of information using SVD. example, Q 2048 x 2048), K might be 2000. We then found out much information the same K top eigenvalues preserve in the fine- RL SFT) and subtracted the two negative value means the rank increased during the same vectors now less information than they did previously). SFT training led to rank than the models. RL models preserved or even reduced the rank. This suggests SFT is memorizing more information, RL is learning more general patterns. Think of it like you're teaching someone to add numbers. SFT is like making them memorize \"2 2 4, 4 4 8, 8 10 18...\" every possible combination. RL is like teaching them the general concept of addition so they can figure out any problem. The first approach needs more storage , but the second generalizes better. Key Insight Base models already the reasoning ability to solve these problems. They the circuits and knowledge built in. RL just gives them gentle nudge in the right direction, activating the specific circuits that matter. SFT, on the other tries to everything. Token-Level Does the Model -Attention Big Picture We plotted the difference between the self-attention matrix of the fine-tuned RL SFT) and the model particular prompt. Similar to the analysis, both ...",
+    "sections": [
+      {
+        "id": "context",
+        "title": "The Context: Why This Matters",
+        "content": "The This Matters supervised fine-tuning reinforcement learning Despite these advances, the inner of RL fine-tuning remain opaque. Existing research primarily evaluates final accuracy, latency, etc.) and neglects internal representations evolve. This is critical because RLHF algorithms typically include KL-divergence penalties intended to constrain drift from model, suggesting that internal structure is changing but in unclear The This Matters Large language models become the foundation of modern NLP. Beyond standard pretraining, two main strategies emerged to specialize fine-tuning and reinforcement learning SFT uses next-token prediction from demonstrations, RL methods like RLHF optimize behavior via scalar rewards, enabling models to follow instructions better, reduce outputs, and reason more effectively underline (Ouyang et al., 2022) Recent RLHF-trained models shown massive improvements. OpenAI's o1 uses RL to generate long latent reasoning chains before responding and achieves bre...",
+        "level": 2
+      },
+      {
+        "id": "setup",
+        "title": "The Setup: Math Problems and Two Training Methods",
+        "content": "Problems and Two Training Methods We used two Qwen3-1. .7B parameter model unsloth Llama-3.2-1B- instruction-finetuned version of LLaMA-3.2- used the instruction-tuned version because the model is poor at instruction following, making it to verify answers GRPO) We trained both models 4 Supervised Fine-Tuning): The classic predict the next token from example solutions using cross-entropy loss RL Relative Policy Optimization RL and KL see much that \"stay close to the model\" constraint matters GRPO is particularly cool because it cuts memory usage roughly in compared to PPO and simplifies training dynamics. Instead of training separate value , it estimates advantages by comparing outputs group: Problems and Two Training Methods We used two Qwen3-1. .7B parameter model unsloth Llama-3.2-1B- instruction-finetuned version of LLaMA-3.2- used the instruction-tuned version because the model is poor at instruction following, making it to verify answers GRPO) We trained both models 4 Supervised F...",
+        "level": 2
+      },
+      {
+        "id": "results",
+        "title": "The Results: RL Crushes It (But Why?)",
+        "content": "The Crushes But Why?) First, the obvious performed better. On Qwen, RL KL 83.55 accuracy 70 SFT. That's 20 On LLaMA, the even 24 The model scores 20.77 Qwen and 48.67 LLaMA, so both methods improved things, but RL did better. Method Eval Epoch Qwen3-1.7B RL Qwen3-1.7B no KL) Qwen3-1.7B SFT LLaMA-3.2 1B RL LLaMA-3.2 1B no KL) LLaMA-3.2 1B SFT Base model 20.77 , LLaMA 48.67 Green rows RL methods. DeepSeek-R1 incentivizes exploration, often leads to longer and better answers. Qwen, training and KL-divergence resulted in no distinguishable difference in final performance. LLaMA, training KL-divergence led to better 7 Interestingly, LLaMA-3.2 1B, SFT actually made the model than the This is likely because the model itself been fine-tuned long duration. But it gets at changed inside the models, RL barely moved anything. SFT, on the other The Crushes But Why?) First, the obvious performed better. Method Eval Epoch 1 2 3 4 Qwen3-1.7B RL 80.74 81.88 83.55 81.43 Qwen3-1.7B no 64 82.87 83.47 81.4...",
+        "level": 2
+      },
+      {
+        "id": "high-level",
+        "title": "High-Level Analysis: What Changed in the Weights?",
+        "content": "High-Level Changed in the Weights?",
+        "level": 2
+      },
+      {
+        "id": "l2-distance",
+        "title": "L2 Distance: How Far Did We Drift?",
+        "content": "L2 Far Did We measured far the fine-tuned drifted from the model using L2 distance. The results caused massive drift. The moved further from the original model. RL models stayed surprisingly close to the Even more KL regularization stayed even closer, but RL KL still did better than SFT staying closer to the L2 Far Did We measured far the fine-tuned drifted from the model using L2 distance. The results shocking: Image L2 distance comparison showing RL stays closer to model",
+        "level": 3,
+        "parentId": "high-level"
+      },
+      {
+        "id": "rank-change",
+        "title": "Rank Change: How Much Information Are We Storing?",
+        "content": "Rank Much Information Are We also looked at the \"rank\" of the much information they store). rank means more \"information\", lower rank means the matrix stores less \"information\" since it can be decomposed into one only loss. To measure this, first found the rank of the model accounts 99 of information using SVD. example, Q 2048 x 2048), K might be 2000. We then found out much information the same K top eigenvalues preserve in the fine- RL SFT) and subtracted the two negative value means the rank increased during the same vectors now less information than they did previously). SFT training led to rank than the models. RL models preserved or even reduced the rank. This suggests SFT is memorizing more information, RL is learning more general patterns. Think of it like you're teaching someone to add numbers. SFT is like making them memorize \"2 2 4, 4 4 8, 8 10 18...\" every possible combination. RL is like teaching them the general concept of addition so they can figure out any problem. The ...",
+        "level": 3,
+        "parentId": "high-level"
+      },
+      {
+        "id": "token-level",
+        "title": "Token-Level Analysis: Where Does the Model Look?",
+        "content": "Token-Level Does the Model Look?",
+        "level": 2
+      },
+      {
+        "id": "attention-matrices",
+        "title": "Self-Attention Matrices: The Big Picture",
+        "content": "Self-Attention Big Picture We plotted the difference between the self-attention matrix of the fine-tuned RL SFT) and the model particular prompt. Similar to the analysis, both the self-attention pattern and the scores remained much closer in \"RL vs. Pre\" than in \"SFT vs. Important Note The scales \"SFT vs. Pre\" much 0.1 to - than the scales the RL rows. So visually it might look like \"RL vs. Pre\" similar differences, but it's not the case. SFT causes bigger changes. Interestingly, the difference between KL and no KL is more especially in LLaMA), self-attention scores of models trained KL, as expected, remain closer to the model. Similar to the analysis, both the self-attention pattern and the scores remained much closer in",
+        "level": 3,
+        "parentId": "token-level"
+      },
+      {
+        "id": "per-token",
+        "title": "Per-Token Attention: What Gets Focused On?",
+        "content": "Per-Token Gets Focused observation that remains consistent across models and pays much more attention to the formatting , so the model tries to always output it and also outputs it multiple often repeating the answer) Given know from other e. ., L2 difference) and our that RL-trained models only slightly nudge the model in the right direction, the per-token attention pattern means that RL pays more attention to just few tokens, and these tokens are sufficient improving performance Another observation that supports look at the attention difference in tokens make up the actual contents of the math e. ., \"Grace 25 pounds, Alex 2 pounds less than 4 times...\"), you see that the difference between RL and the \"Pre\") than between SFT and Ideally, you'd expect that since the RL model performs much better than the it either pays more attention or uses different pattern of attention to these \"logical tokens\", but this is not the case. This is another observation supporting the theory that models ...",
+        "level": 3,
+        "parentId": "token-level"
+      },
+      {
+        "id": "entropy",
+        "title": "The Entropy Story: Exploration vs. Overconfidence",
+        "content": "The Entropy vs. Overconfidence This my favorite finding. We tracked the \"entropy\" of the model as it generates each token. High entropy the model is exploring, low entropy it's confident. More specifically, e is calculated closer to 0. broadly, then gets confident early, then uncertain There are two key things -trained models are more exploratory in the initial phase As RL models get closer to the answer, they gradually become more confident The Entropy vs. We tracked the of the model as it generates each token. More specifically, e t is calculated t v 1 V t,v log t,v is the softmax probability of the RL model output entropy overlay RL entropy plot showing exploration then confidence SFT model output entropy overlay SFT entropy plot showing early overconfidence list-decimal pl-6",
+        "level": 2
+      },
+      {
+        "id": "discussion",
+        "title": "Discussion & Limitations",
+        "content": "Discussion Limitations Our study focuses on two open-source models and single math benchmark, may limit generalization to other domains or model scales. our structural analyses provide clear trends, they do not capture all possible forms of internal drift. Future could expand to additional architectures, tasks, and interpretability tools broader validation. broader impact of the project is that most RL research usually focuses on better algorithms, evaluations, and environments. Our project moves in different direction and us understand RL Discussion Limitations Our study focuses on two open-source models and single math benchmark, may limit generalization to other domains or model scales. Future could expand to additional architectures, tasks, and interpretability tools broader validation.",
+        "level": 2
+      },
+      {
+        "id": "what-means",
+        "title": "What This All Means",
+        "content": "What This All Means So the big doesn't rewrite the model. It makes targeted changes that preserve the model's reasoning abilities. SFT memorizes. It stores more information but doesn't generalize as RL encourages exploration. Models stay uncertain longer, try different paths, and then confidently commit to answers. Base models already know to reason. RL just activates the right circuits and sharpens focus on matters. RL preserves attention structure. Especially KL regularization, attention patterns stay close to the model. RL focuses on key tokens. It pays more attention to formatting tokens like needing to change attention to problem content. This implications alignment and interpretability. RL makes interpretable changes rather than massive rewrites, can better understand and control models are doing. We can design training that preserves the good stuff fixing the bad stuff. It pays more attention to formatting tokens like boxed needing to change attention to problem content.",
+        "level": 2
+      },
+      {
+        "id": "takeaway",
+        "title": "The Takeaway",
+        "content": "The Takeaway RL fine-tuning is like precision makes surgical changes rather than swinging sledgehammer. It nudges models in the right direction breaking already And that's probably it's so effective at improving reasoning maintaining generalization. These results suggest that RL fine-tuning encourages efficient and selective adaptation, SFT drives more global but less structured changes. Understanding these internal differences is key to designing future alignment strategies that balance performance interpretability. It nudges models in the right direction breaking already And that's probably it's so effective at improving reasoning maintaining generalization.",
+        "level": 2
+      },
+      {
+        "id": "references",
+        "title": "References & Resources",
+        "content": "References Resources Papers et al. DeepSeek-AI Cobbe et al. Barbero et al. OpenAI Code Repository Full Plots Visualizations This done Rahul Chand as part of CS224R at Stanford. Shoutout to the open-source community making models like Qwen and LLaMA available research. - Training language models to follow instructions feedback Shao et al. - the Limits of Mathematical Reasoning DeepSeek-AI - DeepSeek- Reasoning Capability in LLMs via Reinforcement Learning Cobbe et al. - Training Verifiers to Solve Math Word Problems Barbero et al. - Why do LLMs attend to the first - o1 System Card Code Repository Full Plots Visualizations",
+        "level": 2
+      }
+    ]
+  },
+  {
+    "title": "Research — Arpan Khatua",
+    "url": "/research",
+    "description": "",
+    "category": "Page",
+    "content": ""
+  },
+  {
+    "title": "Research Assistant",
+    "url": "/experience",
+    "description": "Experience Work that shaped I build. Academic Where I learned to learn.",
+    "category": "Page",
+    "content": "Experience Work that shaped I build. Academic Where I learned to learn. Coursework Teaching Conversational Virtual Assistants, Human Centered NLP, Reinforcement Learning, Deep RL Teaching Conversational Virtual Assistants) Coursework Teaching Senior Large Real World and Synthetic Graph Datasets GNN Applications , ML, Deep Learning, Algorithms, Parallel Programming, Data Structures, Database Systems, Computer Systems Computer Systems), ECE 313 , ECE 210 , ECE 110 Honors Lab Highest Honors, Bronze Tablet, Edmund J. James Scholar that shaped I build. Where I learned to learn. Coursework Teaching Conversational Virtual Assistants, Human Centered NLP, Reinforcement Learning, Deep RL Teaching Conversational Virtual Assistants) Coursework Teaching Senior Large Real World and Synthetic Graph Datasets GNN Applications , ML, Deep Learning, Algorithms, Parallel Programming, Data Structures, Database Systems, Computer Systems Computer Systems), ECE 313 , ECE 210 , ECE 110 Honors Lab"
+  },
+  {
+    "title": "Projects — Arpan Khatua",
+    "url": "/projects",
+    "description": "Projects Things I built to learn faster. I built to learn faster.",
+    "category": "Page",
+    "content": "Projects Things I built to learn faster. I built to learn faster. GitHubContributions username"
+  },
+  {
+    "title": "Contact — Arpan Khatua",
+    "url": "/contact",
+    "description": "Contact Say Reach out collaborations, experiments, or to swap notes on ML and tooling. Email LinkedIn GitHub Crafted mix of sharp sans and soft serif Prime Intellect edge, Claude calm.",
+    "category": "Page",
+    "content": "Contact Say Reach out collaborations, experiments, or to swap notes on ML and tooling. Email LinkedIn GitHub Crafted mix of sharp sans and soft serif Prime Intellect edge, Claude calm. Reach out collaborations, experiments, or to swap notes on ML and tooling. Email LinkedIn GitHub"
+  },
+  {
+    "title": "Blog — Arpandeep Khatua",
+    "url": "/blog",
+    "description": "Blog Notes on ML, tooling, and building.",
+    "category": "Page",
+    "content": "Blog Notes on ML, tooling, and building."
+  },
+  {
+    "title": "Bio",
+    "url": "/",
+    "description": "Hi I'm Arpan Prof. Diyi Yang Prof.",
+    "category": "Page",
+    "content": "Hi I'm Arpan Prof. Diyi Yang Prof. Jure Leskovec Prof. Monica Lam Vikram Sharma Mailthody Prof. Wen-Mei Hwu GitHub Twitter LinkedIn Scholar Email Arpan I broadly on problems related to language agents, model evaluation, and making LLMs play nice and each other. I'm MSCS student at Stanford , I'm blessed amazing advisors Prof. Jure Leskovec , and Prof. Monica Lam Before that I at I people around the connect on Facebook groups. I built systems to keep groups safe and friendly and LLM agents to answer people's questions. I completed my BS in Computer Engineering from UIUC , I on large-scale graph systems the amazing Vikram Sharma Mailthody Prof. Wen-Mei Hwu CV ?"
+  }
+]

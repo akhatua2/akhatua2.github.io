@@ -1,61 +1,41 @@
-# Build artifacts (populated by GitHub Actions during deployment)
-# These files should NOT be in source control but ARE needed in root for GitHub Pages
-*.html
-*.txt
-_next/
-404/
-favicon.ico
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# Build artifacts - Images in root (generated during deployment)
-# Allow images in frontend/public/ but ignore generated ones in root
-/*.png
-/*.jpg
-/*.jpeg
-/*.gif
-/*.svg
-/*.webp
-/*.pdf
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
 
-# Build artifacts - Directories in root (generated during deployment)  
-/hobbies/
+# testing
+/coverage
 
-# But allow all assets in frontend/public/ (these are source files)
-!frontend/public/**
+# next.js
+/.next/
+/out/
 
-# Node.js
-node_modules/
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.pnpm-debug.log*
 
-# Next.js
-frontend/.next/
-frontend/out/
-frontend/.env*.local
+# env files (can opt-in for committing if needed)
+.env*
 
-# Operating System
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# vercel
+.vercel
 
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.temp
-
-
-Understanding_the_affect_of_RL_on_the_internal_representation_of_LLMs
-CS329x___LLM_Moderation
+# typescript
+*.tsbuildinfo
+next-env.d.ts
