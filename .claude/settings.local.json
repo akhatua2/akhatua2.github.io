@@ -10,7 +10,8 @@
       "WebFetch(domain:therapygym.stanford.edu)",
       "Bash(ls:*)",
       "Bash(git ls-files:*)",
-      "Bash(vercel git:*)"
+      "Bash(vercel git:*)",
+      "Bash(git pull:*)"
     ]
   }
 }
