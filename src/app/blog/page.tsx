@@ -49,6 +49,15 @@ const posts = [
     url: "https://humanlm.stanford.edu/blog_synthetic.html",
     external: true,
   },
+  {
+    title: "SWebSmith",
+    date: "2025",
+    readingTime: "External Link",
+    summary:
+      "JavaScript benchmarking and evaluation for AI development.",
+    url: "https://www.swebench.com/post-260113-swesmith-javascript.html",
+    external: true,
+  },
 ];
 
 export default function Blog() {
