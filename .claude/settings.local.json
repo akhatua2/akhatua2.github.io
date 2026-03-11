@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /Users/arpan/Desktop/akhatua2.github.io/new_me && vercel whoami 2>&1)",
+      "Bash(gh api:*)",
+      "Bash(head:*)",
+      "Bash(vercel project:*)",
+      "Bash(git rm:*)",
+      "Bash(tail:*)",
+      "WebFetch(domain:therapygym.stanford.edu)",
+      "Bash(ls:*)",
+      "Bash(git ls-files:*)",
+      "Bash(vercel git:*)"
+    ]
+  }
+}

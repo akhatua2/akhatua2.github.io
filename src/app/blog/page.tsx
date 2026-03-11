@@ -22,6 +22,33 @@ const posts = [
       "What happens when you add a neutral moderator to help LLMs cooperate in strategic games? Spoiler: it works way better than you'd think.",
     slug: "llm-moderation-cooperation",
   },
+  {
+    title: "The Curious Case of Miscoordination",
+    date: "2025",
+    readingTime: "External Link",
+    summary:
+      "An exploration of miscoordination in multi-agent systems.",
+    url: "https://cooperbench.com/blog/the-curious-case-of-miscoordination",
+    external: true,
+  },
+  {
+    title: "Curse of Coordination",
+    date: "2025",
+    readingTime: "External Link",
+    summary:
+      "Understanding the curse of coordination in reinforcement learning.",
+    url: "https://cooperbench.com/blog/curse-of-coordination",
+    external: true,
+  },
+  {
+    title: "Synthetic Data for Language Models",
+    date: "2025",
+    readingTime: "External Link",
+    summary:
+      "Research on synthetic data generation for training language models.",
+    url: "https://humanlm.stanford.edu/blog_synthetic.html",
+    external: true,
+  },
 ];
 
 export default function Blog() {
@@ -62,7 +89,17 @@ export default function Blog() {
               </article>
             );
 
-            return post.slug ? (
+            return post.external ? (
+              <a
+                key={post.title}
+                href={post.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                {articleContent}
+              </a>
+            ) : post.slug ? (
               <Link key={post.title} href={`/blog/${post.slug}`} className="block">
                 {articleContent}
               </Link>
