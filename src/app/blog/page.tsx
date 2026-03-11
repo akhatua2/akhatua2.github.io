@@ -7,6 +7,42 @@ export const metadata = {
 
 const posts = [
   {
+    title: "[SWE-Smith Multilingual] Expanding to JavaScript",
+    date: "2026",
+    readingTime: "External Link",
+    summary:
+      "We expanded SWE-Smith to JavaScript with 6,099 validated patches across 74 repositories using cloud pipelines.",
+    url: "https://www.swebench.com/post-260113-swesmith-javascript.html",
+    external: true,
+  },
+  {
+    title: "Is Synthetic Data Good Enough to Train User Simulators?",
+    date: "2026",
+    readingTime: "External Link",
+    summary:
+      "We spent a month trying to make synthetic data work. Found that 'the improvements you observe on synthetic benchmarks may simply not transfer to the real users you actually want to simulate.'",
+    url: "https://humanlm.stanford.edu/blog_synthetic.html",
+    external: true,
+  },
+  {
+    title: "The Curse of Coordination",
+    date: "2026",
+    readingTime: "External Link",
+    summary:
+      "We built CooperBench and found that adding agents halves success rates. The channel becomes noisy with repetition, unresponsiveness, and hallucination.",
+    url: "https://cooperbench.com/blog/curse-of-coordination",
+    external: true,
+  },
+  {
+    title: "The Curious Case of Miscoordination",
+    date: "2026",
+    readingTime: "External Link",
+    summary:
+      "We gave agents git access and saw only 1-2% improvement. Tools alone don't enable collaboration without social intelligence.",
+    url: "https://cooperbench.com/blog/the-curious-case-of-miscoordination",
+    external: true,
+  },
+  {
     title: "What Actually Happens Inside LLMs When You Use RL?",
     date: "Jan 20, 2025",
     readingTime: "20 min read",
@@ -21,42 +57,6 @@ const posts = [
     summary:
       "What happens when you add a neutral moderator to help LLMs cooperate in strategic games? Spoiler: it works way better than you'd think.",
     slug: "llm-moderation-cooperation",
-  },
-  {
-    title: "The Curious Case of Miscoordination",
-    date: "2025",
-    readingTime: "External Link",
-    summary:
-      "An exploration of miscoordination in multi-agent systems.",
-    url: "https://cooperbench.com/blog/the-curious-case-of-miscoordination",
-    external: true,
-  },
-  {
-    title: "Curse of Coordination",
-    date: "2025",
-    readingTime: "External Link",
-    summary:
-      "Understanding the curse of coordination in reinforcement learning.",
-    url: "https://cooperbench.com/blog/curse-of-coordination",
-    external: true,
-  },
-  {
-    title: "Synthetic Data for Language Models",
-    date: "2025",
-    readingTime: "External Link",
-    summary:
-      "Research on synthetic data generation for training language models.",
-    url: "https://humanlm.stanford.edu/blog_synthetic.html",
-    external: true,
-  },
-  {
-    title: "SWebSmith",
-    date: "2025",
-    readingTime: "External Link",
-    summary:
-      "JavaScript benchmarking and evaluation for AI development.",
-    url: "https://www.swebench.com/post-260113-swesmith-javascript.html",
-    external: true,
   },
 ];
 

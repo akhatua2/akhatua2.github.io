@@ -11,7 +11,8 @@
       "Bash(ls:*)",
       "Bash(git ls-files:*)",
       "Bash(vercel git:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "WebFetch(domain:www.swebench.com)"
     ]
   }
 }
