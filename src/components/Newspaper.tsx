@@ -40,6 +40,46 @@ export default function Newspaper() {
   }, []);
   const newsItems: NewsItem[] = [
     {
+      date: "Sep 2026",
+      dateSort: "2026-09",
+      headline: "Harbor Ports 80+ Agentic Benchmarks Into One Evaluation Stack",
+      content:
+        "Harbor Adapters unify evaluation infrastructure for agentic benchmarks, porting more than 80 benchmarks to run arbitrary agents and validating them through code review and parity experiments. A large-scale study evaluates 8 models across 54 benchmarks and 6,627 tasks, and Harbor-Index curates the results into a meta-dataset for agentic evaluation.",
+      authors: "Shi, L., Lin, H., Zhu, Z., Zhou, X., Li, X., ..., Khatua, A., ... et al.",
+      paperTitle:
+        "Harbor Adapters and Harbor-Index: Infrastructure and a Curated Meta-Dataset for Large-Scale Agentic Evaluation",
+      venue: "arXiv (2026)",
+      link: "https://arxiv.org/abs/2609.04298",
+      codeLink: "https://github.com/harbor-framework/harbor",
+      category: "Research",
+    },
+    {
+      date: "Aug 2026",
+      dateSort: "2026-08",
+      headline: "What Should a Model Forget? New Benchmark Tackles Forget Set Curation",
+      content:
+        "Most unlearning work assumes the examples to forget are already known. This work studies the missing upstream step: mapping a request like “stop reproducing this book” to the actual data passed to an unlearning algorithm. The team introduces CleanSlate, a benchmark for forget set curation in language models.",
+      authors: "Jha, A.*, Khatua, A.*, Allouah, Y., & Koyejo, S.",
+      paperTitle: "What to Forget in Unlearning? Forget Set Curation for Language Models",
+      venue: "MemFM & FoGen @ ICML 2026",
+      link: "https://arxiv.org/abs/2608.14855",
+      codeLink: "#",
+      category: "Research",
+    },
+    {
+      date: "May 2026",
+      dateSort: "2026-05",
+      headline: "Framework Charts the Road Ahead for Human-Centered LLMs",
+      content:
+        "A broad collaboration lays out a framework for building Human-Centered Large Language Models, bringing together perspectives from NLP, HCI, and responsible AI to build, evaluate, and deploy LLMs around human priorities, not just technical capability.",
+      authors: "Ziems, C., Zhao, D., Wang, R. E., Jörke, M., ..., Khatua, A., ... et al.",
+      paperTitle: "Reflections and New Directions for Human-Centered Large Language Models",
+      venue: "arXiv (2026)",
+      link: "https://arxiv.org/abs/2605.06901",
+      codeLink: "#",
+      category: "Research",
+    },
+    {
       date: "Nov 2025",
       dateSort: "2025-11",
       headline: "Study Reveals 3.3% of Wikipedia Facts Contradict Each Other",

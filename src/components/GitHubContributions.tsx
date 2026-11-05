@@ -8,6 +8,8 @@ interface ContributionDay {
   level: 0 | 1 | 2 | 3 | 4;
 }
 
+const YEAR = new Date().getFullYear();
+
 interface GitHubContributionsProps {
   username: string;
   showStats?: boolean;
@@ -44,20 +46,20 @@ export default function GitHubContributions({
           contributionMap.set(day.date, day);
         });
 
-        // Generate full 2025 calendar (Jan 1 to Dec 31)
-        const allDays2025: ContributionDay[] = [];
-        const startDate = new Date("2025-01-01");
-        const endDate = new Date("2025-12-31");
+        // Generate full calendar for the current year (Jan 1 to Dec 31)
+        const allDaysInYear: ContributionDay[] = [];
+        const startDate = new Date(`${YEAR}-01-01`);
+        const endDate = new Date(`${YEAR}-12-31`);
 
         for (let d = new Date(startDate); d <= endDate; d.setDate(d.getDate() + 1)) {
           const dateStr = d.toISOString().split("T")[0];
           const contribution = contributionMap.get(dateStr);
 
           if (contribution) {
-            allDays2025.push(contribution);
+            allDaysInYear.push(contribution);
           } else {
             // Empty day (no contributions)
-            allDays2025.push({
+            allDaysInYear.push({
               date: dateStr,
               count: 0,
               level: 0,
@@ -66,7 +68,7 @@ export default function GitHubContributions({
         }
 
         // Sort by date to ensure proper order for waterfall animation
-        const sortedDays = allDays2025.sort((a, b) => {
+        const sortedDays = allDaysInYear.sort((a, b) => {
           if (!a.date) return 1;
           if (!b.date) return -1;
           return a.date.localeCompare(b.date);
@@ -90,17 +92,17 @@ export default function GitHubContributions({
 
   // Create a date-to-index map for waterfall animation ordering
   const dateToIndexMap = new Map<string, number>();
-  const startDate = new Date("2025-01-01");
+  const startDate = new Date(`${YEAR}-01-01`);
   let dateIndex = 0;
 
-  // Map all dates from Jan 1 to Dec 31, 2025
-  for (let d = new Date(startDate); d <= new Date("2025-12-31"); d.setDate(d.getDate() + 1)) {
+  // Map all dates from Jan 1 to Dec 31 of the current year
+  for (let d = new Date(startDate); d <= new Date(`${YEAR}-12-31`); d.setDate(d.getDate() + 1)) {
     const dateStr = d.toISOString().split("T")[0];
     dateToIndexMap.set(dateStr, dateIndex++);
   }
 
-  // Group contributions by week, starting from the Monday of the week containing Jan 1, 2025
-  // Show complete weeks, with empty days before Jan 1 if needed (but no Dec 2024 dates)
+  // Group contributions by week, starting from the Monday of the week containing Jan 1
+  // Show complete weeks, with empty days before Jan 1 if needed (but no dates from the previous year)
   const weeks: ContributionDay[][] = [];
   const dayOfWeek = startDate.getDay(); // 0 = Sunday, 1 = Monday, etc.
 
@@ -109,7 +111,7 @@ export default function GitHubContributions({
 
   const allDays: ContributionDay[] = [];
 
-  // Add empty days at the beginning (these are just placeholders, not Dec 2024 dates)
+  // Add empty days at the beginning (these are just placeholders, not previous-year dates)
   for (let i = 0; i < emptyDaysBefore; i++) {
     allDays.push({
       date: "", // Empty date for placeholder days
@@ -118,10 +120,10 @@ export default function GitHubContributions({
     });
   }
 
-  // Add all 2025 days (already sorted by date)
+  // Add all days of the year (already sorted by date)
   allDays.push(...contributions);
 
-  // Add empty days at the end to complete the last week (for future dates in 2026 if needed)
+  // Add empty days at the end to complete the last week
   const remainingDays = allDays.length % 7;
   if (remainingDays > 0) {
     const daysToAdd = 7 - remainingDays;
@@ -203,12 +205,12 @@ export default function GitHubContributions({
   // Generate placeholder weeks structure for loading state
   const generatePlaceholderWeeks = (): ContributionDay[][] => {
     const placeholderWeeks: ContributionDay[][] = [];
-    const startDate = new Date("2025-01-01");
+    const startDate = new Date(`${YEAR}-01-01`);
     const dayOfWeek = startDate.getDay();
     const emptyDaysBefore = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
 
-    // Calculate total days needed (empty days before + 365 days of 2025 + empty days after)
-    const totalDays = emptyDaysBefore + 365;
+    // Calculate total days needed (empty days before + the days of the year + empty days after)
+    const totalDays = emptyDaysBefore + (YEAR % 4 === 0 ? 366 : 365);
     const totalWeeks = Math.ceil(totalDays / 7);
 
     for (let i = 0; i < totalWeeks; i++) {
@@ -243,7 +245,7 @@ export default function GitHubContributions({
                 <span className="font-semibold text-foreground">
                   {totalContributions.toLocaleString()}
                 </span>{" "}
-                contributions in 2025
+                contributions in {YEAR}
               </p>
             )}
           </div>

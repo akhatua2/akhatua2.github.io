@@ -23,6 +23,35 @@ export default function Experience() {
 
         <section className="fade-up">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Google Research - Badge */}
+            <EmployeeBadge
+              name="Arpandeep Khatua"
+              employeeId="GOOG-2026-0901"
+              title="Student Researcher"
+              department="Google Research"
+              location="Mountain View, CA"
+              startDate="Sep 2026"
+              endDate="Present"
+              achievements={["Working with Daniel Halpern and Craig Boutilier"]}
+              accessLevel={["Research", "Publications"]}
+              photo="/me-transparent.png"
+              company="Google"
+            />
+
+            {/* NVIDIA - Employee Badge */}
+            <EmployeeBadge
+              name="Arpandeep Khatua"
+              employeeId="NVDA-2026-0401"
+              title="Deep Learning Engineer"
+              department="NVIDIA"
+              startDate="Apr 2026"
+              endDate="Sep 2026"
+              achievements={[]}
+              accessLevel={["Engineering", "GPU Access"]}
+              photo="/me-transparent.png"
+              company="NVIDIA"
+            />
+
             {/* Stanford Research - Badge */}
             <EmployeeBadge
               name="Arpandeep Khatua"
@@ -31,7 +60,7 @@ export default function Experience() {
               department="Stanford AI Lab"
               location="Stanford, CA"
               startDate="Sep 2024"
-              endDate="Present"
+              endDate="Apr 2026"
               achievements={[
                 "Socially intelligent agent systems for nuanced human-AI interaction",
                 "Corpus-level inconsistency detection for LLM outputs",
@@ -103,13 +132,13 @@ export default function Experience() {
                 department="School of Engineering"
                 location="Stanford, CA"
                 startDate="Sep 2024"
-                endDate="Present"
+                endDate="Apr 2026"
                 highlights={[
                   "Research Assistant at Stanford AI Lab (SALT, OVAL, SNAP)",
                   "Working with Prof. Diyi Yang, Prof. Jure Leskovec, and Prof. Monica Lam",
                   "Focus on language agents, model evaluation, and human-AI interaction",
                 ]}
-                statusBadges={["Graduate Student", "Research", "Active"]}
+                statusBadges={["Graduate Student", "Research", "Graduated"]}
                 photo="/me-transparent.png"
                 university="Stanford"
               />

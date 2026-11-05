@@ -50,12 +50,33 @@ export default function Home() {
                     <div className="text-sm sm:text-base text-foreground leading-relaxed space-y-3 sm:space-y-4">
                       <p>
                         I broadly work on problems related to language agents, model evaluation, and
-                        making LLMs play nice with humans and each other. I&apos;m a MSCS student at
-                        Stanford{" "}
+                        making LLMs play nice with humans and each other. I&apos;m a Student
+                        Researcher at Google Research, where I work with{" "}
+                        <a
+                          href="https://daniel-halpern.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent no-underline"
+                        >
+                          Daniel Halpern
+                        </a>{" "}
+                        and{" "}
+                        <a
+                          href="https://research.google/people/craigboutilier/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-accent no-underline"
+                        >
+                          Craig Boutilier
+                        </a>
+                        .
+                      </p>
+                      <p>
+                        I did my MSCS at Stanford{" "}
                         <span className="text-xl inline-block" role="img" aria-label="tree emoji">
                           🌲
                         </span>
-                        , where I&apos;m blessed with amazing advisors{" "}
+                        , where I was blessed with amazing advisors{" "}
                         <a
                           href="https://cs.stanford.edu/~diyiy/"
                           target="_blank"
@@ -82,7 +103,8 @@ export default function Home() {
                         >
                           Prof. Monica Lam
                         </a>
-                        .
+                        . After graduating, I spent a few months at NVIDIA as a Deep Learning
+                        Engineer.
                       </p>
                       <div className="my-4 sm:my-8"></div>
                       <p>

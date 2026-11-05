@@ -205,7 +205,7 @@
     "content": ""
   },
   {
-    "title": "Research Assistant",
+    "title": "Student Researcher",
     "url": "/experience",
     "description": "Experience Work that shaped I build. Academic Where I learned to learn.",
     "category": "Page",
@@ -228,15 +228,15 @@
   {
     "title": "Blog — Arpandeep Khatua",
     "url": "/blog",
-    "description": "Blog Notes on ML, tooling, and building.",
+    "description": "Blog Notes on ML, tooling, and building. We expanded SWE-Smith to JavaScript 6,099 validated patches across 74 repositories using cloud pipelines.",
     "category": "Page",
-    "content": "Blog Notes on ML, tooling, and building."
+    "content": "Blog Notes on ML, tooling, and building. We expanded SWE-Smith to JavaScript 6,099 validated patches across 74 repositories using cloud pipelines. Is Synthetic Data Good Enough to Train User spent month trying to make synthetic data Found that 'the improvements you observe on synthetic benchmarks may simply not transfer to the real users you actually to simulate.' We built CooperBench and found that adding agents success rates. The channel becomes noisy repetition, unresponsiveness, and The Curious Case of Miscoordination We gave agents git access and saw only 1-2 improvement. Tools alone don't enable collaboration social intelligence. What Actually Happens Inside LLMs When You Use peeked under the to see reinforcement learning changes going on inside language models. 's cooler than thought. understanding-rl-internal-representations Can Moderation Help Multi-LLM you add neutral moderator to LLMs cooperate in better than you'd think"
   },
   {
     "title": "Bio",
     "url": "/",
-    "description": "Hi I'm Arpan Prof. Diyi Yang Prof.",
+    "description": "Hi I'm Arpan Daniel Halpern Craig Boutilier Prof. Diyi Yang Prof.",
     "category": "Page",
-    "content": "Hi I'm Arpan Prof. Diyi Yang Prof. Jure Leskovec Prof. Monica Lam Vikram Sharma Mailthody Prof. Wen-Mei Hwu GitHub Twitter LinkedIn Scholar Email Arpan I broadly on problems related to language agents, model evaluation, and making LLMs play nice and each other. I'm MSCS student at Stanford , I'm blessed amazing advisors Prof. Jure Leskovec , and Prof. Monica Lam Before that I at I people around the connect on Facebook groups. I built systems to keep groups safe and friendly and LLM agents to answer people's questions. I completed my BS in Computer Engineering from UIUC , I on large-scale graph systems the amazing Vikram Sharma Mailthody Prof. Wen-Mei Hwu CV ?"
+    "content": "Hi I'm Arpan Daniel Halpern Craig Boutilier Prof. Diyi Yang Prof. Jure Leskovec Prof. Monica Lam After graduating, I spent few months at NVIDIA as Deep Learning Engineer. Vikram Sharma Mailthody Prof. Wen-Mei Hwu GitHub Twitter LinkedIn Scholar Email Arpan I broadly on problems related to language agents, model evaluation, and making LLMs play nice and each other. I'm Student Researcher at Google Research, I Daniel Halpern Craig Boutilier I did my MSCS at Stanford , I blessed amazing advisors Prof. Jure Leskovec , and Prof. Before that I at I people around the connect on Facebook groups. I built systems to keep groups safe and friendly and LLM agents to answer people's questions. I completed my BS in Computer Engineering from UIUC , I on large-scale graph systems the amazing Vikram Sharma Mailthody Prof. Wen-Mei Hwu CV ?"
   }
 ]

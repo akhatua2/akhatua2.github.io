@@ -26,9 +26,10 @@ async function fetchViaGraphQL(username: string, token?: string) {
     return null;
   }
 
-  // Query for 2025 contributions
-  const fromDate = "2025-01-01T00:00:00Z";
-  const toDate = "2025-12-31T23:59:59Z";
+  // Query for current-year contributions
+  const year = new Date().getFullYear();
+  const fromDate = `${year}-01-01T00:00:00Z`;
+  const toDate = `${year}-12-31T23:59:59Z`;
 
   const query = `
     query($username: String!, $from: DateTime!, $to: DateTime!) {
@@ -84,7 +85,7 @@ async function fetchViaGraphQL(username: string, token?: string) {
     const days: Array<{ date: string; count: number; level: number }> = [];
     let total = 0;
 
-    // Flatten weeks into days array and filter to 2025 only
+    // Flatten weeks into days array and filter to the current year only
     interface ContributionDay {
       date: string;
       contributionCount: number;
@@ -96,7 +97,7 @@ async function fetchViaGraphQL(username: string, token?: string) {
     calendar.weeks?.forEach((week: ContributionWeek) => {
       week.contributionDays?.forEach((day: ContributionDay) => {
         const date = new Date(day.date);
-        if (date.getFullYear() === 2025) {
+        if (date.getFullYear() === year) {
           const count = day.contributionCount || 0;
           total += count;
           days.push({
@@ -135,6 +136,7 @@ async function fetchViaScraping(username: string) {
       /<rect[^>]*data-date="([^"]*)"[^>]*data-count="([^"]*)"[^>]*fill="([^"]*)"[^>]*>/g;
     const days: Array<{ date: string; count: number; level: number }> = [];
     let total = 0;
+    const year = new Date().getFullYear();
     let match: RegExpExecArray | null = rectRegex.exec(html);
 
     while (match !== null) {
@@ -143,9 +145,10 @@ async function fetchViaScraping(username: string) {
       const fill = match[3];
 
       if (dataDate) {
-        // Filter to only 2025 dates
+        // Filter to only current-year dates
         const date = new Date(dataDate);
-        if (date.getFullYear() !== 2025) {
+        if (date.getFullYear() !== year) {
+          match = rectRegex.exec(html);
           continue;
         }
 

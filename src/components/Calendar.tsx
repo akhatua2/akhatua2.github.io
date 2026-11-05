@@ -8,7 +8,15 @@ interface CalendarEvent {
   dateSort: string;
   title: string;
   description: string;
-  category: "Teaching" | "Conference" | "Mentoring" | "Talk" | "Travel" | "Project" | "Research";
+  category:
+    | "Teaching"
+    | "Conference"
+    | "Mentoring"
+    | "Talk"
+    | "Travel"
+    | "Project"
+    | "Research"
+    | "Career";
   location?: string;
   link?: string;
   day?: number; // Specific day of month if available
@@ -18,6 +26,64 @@ export default function Calendar() {
   const [currentYear, setCurrentYear] = useState(2026);
 
   const events: CalendarEvent[] = [
+    {
+      date: "Sep 2026",
+      dateSort: "2026-09",
+      title: "Joined Google Research",
+      description:
+        "Started as a Student Researcher at Google Research, working with Daniel Halpern and Craig Boutilier.",
+      category: "Career",
+      location: "Google Research",
+      link: "https://research.google/",
+    },
+    {
+      date: "Sep 2026",
+      dateSort: "2026-09",
+      title: "Harbor Adapters Preprint",
+      description:
+        "Released Harbor Adapters and Harbor-Index for large-scale agentic evaluation across 80+ benchmarks.",
+      category: "Research",
+      link: "https://arxiv.org/abs/2609.04298",
+      day: 3,
+    },
+    {
+      date: "Aug 2026",
+      dateSort: "2026-08",
+      title: "Forget Set Curation Preprint",
+      description:
+        "Released our work on forget set curation for LLM unlearning, presented at the MemFM and FoGen workshops at ICML 2026.",
+      category: "Research",
+      location: "Stanford",
+      link: "https://arxiv.org/abs/2608.14855",
+      day: 14,
+    },
+    {
+      date: "Apr 2026",
+      dateSort: "2026-04",
+      title: "Joined NVIDIA",
+      description: "Started as a Deep Learning Engineer at NVIDIA.",
+      category: "Career",
+      location: "NVIDIA",
+    },
+    {
+      date: "Apr 2026",
+      dateSort: "2026-04",
+      title: "Graduated from Stanford",
+      description: "Finished my MS in Computer Science at Stanford.",
+      category: "Career",
+      location: "Stanford",
+    },
+    {
+      date: "May 2026",
+      dateSort: "2026-05",
+      title: "Human-Centered LLMs Preprint",
+      description:
+        "Released Reflections and New Directions for Human-Centered Large Language Models.",
+      category: "Research",
+      location: "Stanford",
+      link: "https://arxiv.org/abs/2605.06901",
+      day: 7,
+    },
     {
       date: "Fall 2025",
       dateSort: "2025-09",
@@ -51,7 +117,8 @@ export default function Calendar() {
       date: "Feb 2026",
       dateSort: "2026-02",
       title: "TherapyGym Launch",
-      description: "Launched TherapyGym, a clinical evaluation and training framework for therapy chatbots.",
+      description:
+        "Launched TherapyGym, a clinical evaluation and training framework for therapy chatbots.",
       category: "Research",
       location: "Stanford",
       link: "https://therapygym.stanford.edu/",
@@ -115,6 +182,7 @@ export default function Calendar() {
       Travel: "bg-pink-100 text-pink-800",
       Project: "bg-indigo-100 text-indigo-800",
       Research: "bg-emerald-100 text-emerald-800",
+      Career: "bg-amber-100 text-amber-800",
     };
     return colors[category] || "bg-gray-100 text-gray-800";
   };
@@ -292,7 +360,16 @@ export default function Calendar() {
             </h3>
             <div className="flex flex-wrap gap-2">
               {(
-                ["Teaching", "Conference", "Mentoring", "Talk", "Travel", "Project", "Research"] as const
+                [
+                  "Teaching",
+                  "Conference",
+                  "Mentoring",
+                  "Talk",
+                  "Travel",
+                  "Project",
+                  "Research",
+                  "Career",
+                ] as const
               ).map((category) => (
                 <div
                   key={category}
